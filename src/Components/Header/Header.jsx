@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Header.css';
 import { Link } from 'react-router-dom';
 import Logo from '../../assets/logo1.webp';
-import { Button } from '@mui/material';
+import { Badge, Button } from '@mui/material';
 import { MdMenuOpen, MdOutlineLightMode, MdOutlineMailOutline } from 'react-icons/md';
 import SearchBox from '../SearchBox/SearchBox';
 import { IoCartOutline } from 'react-icons/io5';
@@ -14,6 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import PersonAdd from '@mui/icons-material/PersonAdd';
 import Logout from '@mui/icons-material/Logout';
+import { FaShieldHalved } from 'react-icons/fa6';
 
 const Header = () => {
     const [anchorEl, setAnchorEl] = useState(null);
@@ -54,12 +55,26 @@ const Header = () => {
                             <SearchBox />
                         </div>
                         <div className="col-sm-7 d-flex align-items-center justify-content-end part3">
-                            <Button className='rounded-circle mr-3'><MdOutlineLightMode /></Button>
-                            <Button className='rounded-circle mr-3'><IoCartOutline /></Button>
-                            <Button className='rounded-circle mr-3'><MdOutlineMailOutline /></Button>
+                            <Button className='rounded-circle mr-3'>
+                                <MdOutlineLightMode />
+                            </Button>
+                            <Button className='rounded-circle mr-3'>
+                                <Badge badgeContent={4} color="primary">
+                                    <IoCartOutline color="action" />
+                                </Badge>
+                            </Button>
+                            <Button className='rounded-circle mr-3'>
+                                <Badge badgeContent={4} color="primary">
+                                    <MdOutlineMailOutline color="action" />
+                                </Badge>
+                            </Button>
 
                             <div className='dropDownWrapper position-relative'>
-                                <Button className='rounded-circle mr-3' onClick={handleopenMynotificationsDrop}><FaRegBell /></Button>
+                                <Button className='rounded-circle mr-3' onClick={handleopenMynotificationsDrop}>
+                                    <Badge badgeContent={34} color="primary">
+                                        <FaRegBell color="action" />
+                                    </Badge>
+                                </Button>
                                 <Menu
                                     anchorEl={isOpenNotificationDrop}
                                     className='notifications dropDown_List'
@@ -95,6 +110,7 @@ const Header = () => {
                                                 </div>
                                             </div>
                                         </MenuItem>
+                                        <hr className='mt-0 mb-1' />
                                         <MenuItem onClick={handleCloseMynotificationsDrop}>
                                             <div className="d-flex">
                                                 <div>
@@ -116,6 +132,7 @@ const Header = () => {
                                                 </div>
                                             </div>
                                         </MenuItem>
+                                        <hr className='mt-0 mb-1' />
                                         <MenuItem onClick={handleCloseMynotificationsDrop}>
                                             <div className="d-flex">
                                                 <div>
@@ -137,6 +154,7 @@ const Header = () => {
                                                 </div>
                                             </div>
                                         </MenuItem>
+                                        <hr className='mt-0 mb-1' />
                                         <MenuItem onClick={handleCloseMynotificationsDrop}>
                                             <div className="d-flex">
                                                 <div>
@@ -158,6 +176,7 @@ const Header = () => {
                                                 </div>
                                             </div>
                                         </MenuItem>
+                                        <hr className='mt-0 mb-1' />
                                         <MenuItem onClick={handleCloseMynotificationsDrop}>
                                             <div className="d-flex">
                                                 <div>
@@ -179,6 +198,7 @@ const Header = () => {
                                                 </div>
                                             </div>
                                         </MenuItem>
+                                        <hr className='mt-0 mb-1' />
                                         <MenuItem onClick={handleCloseMynotificationsDrop}>
                                             <div className="d-flex">
                                                 <div>
@@ -200,6 +220,7 @@ const Header = () => {
                                                 </div>
                                             </div>
                                         </MenuItem>
+                                        <hr className='mt-0 mb-1' />
                                         <MenuItem onClick={handleCloseMynotificationsDrop}>
                                             <div className="d-flex">
                                                 <div>
@@ -221,6 +242,7 @@ const Header = () => {
                                                 </div>
                                             </div>
                                         </MenuItem>
+                                          <hr className='mt-0 mb-1' />
                                     </div>
                                     <div className="w-100 pl-3 pr-3 mb-0">
                                         <Button className='btn-blue w-100'>View all Notification</Button>
@@ -256,7 +278,7 @@ const Header = () => {
                                     </MenuItem>
                                     <MenuItem onClick={handleCloseMyAccDrop}>
                                         <ListItemIcon>
-                                            <PersonAdd fontSize="small" />
+                                            <FaShieldHalved fontSize="small" />
                                         </ListItemIcon>
                                         Reset Password
                                     </MenuItem>
