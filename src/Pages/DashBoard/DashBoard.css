@@ -1,0 +1,119 @@
+.right-content {
+  padding: 90px 30px;
+}
+
+.dashboardBoxWrapper {
+  gap: 20px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.dashboardBoxWrapper .dashboardBox {
+  width: 48%;
+  height: 170px;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: left !important;
+  position: relative;
+  color: #fff;
+  text-transform: capitalize !important;
+}
+
+.dashboardBoxWrapper .dashboardBox .col1 h4 {
+  font-size: 16px;
+  font-weight: 600;
+}
+.dashboardBoxWrapper .dashboardBox .col1 span {
+  font-size: 35px;
+  font-weight: bold;
+  line-height: 45px;
+}
+
+.dashboardBoxWrapperRow .box {
+  width: 100%;
+  height: 100%;
+}
+.dashboardBoxWrapper .dashboardBox .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.3)
+  );
+}
+
+.dashboardBoxWrapper .dashboardBox .icon svg {
+  font-size: 36px;
+  opacity: 0.4;
+  color: #fff;
+}
+
+.toggleIcon {
+  font-size: 22px;
+  color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  min-width: 40px !important;
+  height: 40px !important;
+  width: 40px !important;
+  border-radius: 50% !important;
+}
+.toggleIcon svg {
+  font-size: 20px !important;
+  color: #fff !important;
+  opacity: 1 !important;
+}
+
+.chart {
+  position: absolute;
+  opacity: 0.1;
+  bottom: 20px;
+  left: 20px;
+}
+.chart svg {
+  font-size: 110px;
+  color: #000;
+}
+
+.bottomEle {
+  position: relative;
+  top: 15px;
+}
+
+.dropDown_menu .MuiButtonBase-root svg {
+  color: #000 !important;
+  font-size: 17px !important;
+  margin-right: 10px !important;
+}
+
+.graphBox {
+  background-image: linear-gradient(#1a50b5, #2a6ff7);
+  border-radius: 10px;
+  padding: 25px;
+}
+.graphBox h4 {
+  font-size: 16px;
+  font-weight: 600;
+}
+.graphBox p {
+  font-size: 13px;
+  color: #fff;
+  opacity: 0.7;
+}
+.card {
+  margin: 20px 0px;
+  border-radius: 10px;
+}
+.card .hd {
+  font-size: 18px;
+  font-weight: 600;
+  color: #403e57;
+}

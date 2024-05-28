@@ -35,6 +35,10 @@ body {
   flex: 0 0 20%;
   transition: all 0.3s ease-in-out;
 }
+.main .content {
+  width: 80%;
+  flex: 0 0 80%;
+}
 
 .main .sidebarWrapper:hover .sidebar::-webkit-scrollbar {
   background: #0858f7 !important;

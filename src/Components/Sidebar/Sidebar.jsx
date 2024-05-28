@@ -22,11 +22,18 @@ const Sidebar = () => {
                 <ul>
                     <li>
                         <Link to='/'>
-                            <Button className={`w-100 ${activeTab === 0 ? 'active' : ''}`} onClick={() => isOpenSubMenu(0)}>
+                            <Button className={`w-100 ${activeTab === 0 && isToggleSubMenu === true ? 'active' : ''}`} onClick={() => isOpenSubMenu(0)}>
                                 <span className="icon"><MdDashboard /></span>
                                 Dashboard
                                 <span className="arrow"><FaAngleRight /></span>
                             </Button>
+                            <div className={`subMenuWrapper ${activeTab === 0 && isToggleSubMenu === true ? 'colapse' : 'colapsed'}`}>
+                                <ul className="subMenu">
+                                    <li><Link to='#'>Product List</Link></li>
+                                    <li><Link to='#'>Product View</Link></li>
+                                    <li><Link to='#'>Product Upload</Link></li>
+                                </ul>
+                            </div>
                         </Link>
                     </li>
                     <li>
@@ -72,7 +79,7 @@ const Sidebar = () => {
                     </li>
                     <li>
                         <Link to='/'>
-                            <Button className={`w-100 ${activeTab === 0 ? 'active' : ''}`}>
+                            <Button className={`w-100 ${activeTab === 5 ? 'active' : ''}`}>
                                 <span className="icon"><IoIosSettings /></span>
                                 Settings
                                 <span className="arrow"><FaAngleRight /></span>

@@ -44,9 +44,9 @@
   background: #f1f1f1 !important;
 }
 
-.sidebar ul li button * {
+/* .sidebar ul li button * {
   color: #5e5d72 !important;
-}
+} */
 
 .sidebar ul li button .icon {
   display: flex;
@@ -58,6 +58,9 @@
 }
 .sidebar ul li button .icon svg {
   font-size: 22px;
+}
+.sidebar ul li button.active .icon svg {
+  color: #0858f7 !important;
 }
 
 .sidebar ul li button .arrow {
@@ -77,7 +80,8 @@
 .sidebar ul .subMenu {
   padding: 0px 45px !important;
   position: relative;
-  transition: all 0.3s !important;
+  transition: all 0.3s linear !important;
+  -webkit-transition: all 0.3s linear !important;
   height: 0px;
 }
 .sidebar ul .subMenu::before {
@@ -100,7 +104,8 @@
   padding: 6px 0px;
   font-size: 14px;
   font-weight: 500;
-  transition: all 0.3s;
+  transition: all 0.3s linear !important;
+  -webkit-transition: all 0.3s linear !important;
 }
 
 .sidebar ul .subMenu li a:hover {
@@ -108,7 +113,7 @@
 }
 
 .sidebar ul .subMenuWrapper {
-  transition: all 0.3s;
+  transition: all 0.3s linear !important;
   height: 0px;
   overflow: hidden;
 }
@@ -119,6 +124,8 @@
 .sidebar ul .subMenuWrapper.colapse {
   height: auto;
   overflow: inherit;
+  opacity: 1;
+  padding: 10px 0px !important;
 }
 
 .sidebar ul .subMenuWrapper.colapse .subMenu {
