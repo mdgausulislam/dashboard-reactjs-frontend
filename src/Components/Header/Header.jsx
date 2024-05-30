@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './Header.css';
 import { Link } from 'react-router-dom';
 import Logo from '../../assets/logo1.webp';
 import { Badge, Button } from '@mui/material';
-import { MdMenuOpen, MdOutlineLightMode, MdOutlineMailOutline } from 'react-icons/md';
+import { MdMenuOpen, MdOutlineLightMode, MdOutlineMailOutline, MdOutlineMenu } from 'react-icons/md';
 import SearchBox from '../SearchBox/SearchBox';
 import { IoCartOutline } from 'react-icons/io5';
 import { FaRegBell } from 'react-icons/fa';
@@ -15,12 +15,15 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import PersonAdd from '@mui/icons-material/PersonAdd';
 import Logout from '@mui/icons-material/Logout';
 import { FaShieldHalved } from 'react-icons/fa6';
+import { MyContext } from '../../App';
 
 const Header = () => {
     const [anchorEl, setAnchorEl] = useState(null);
     const [isOpenNotificationDrop, setisOpenNotificationDrop] = useState(false);
     const openMyAcc = Boolean(anchorEl);
     const openNotification = Boolean(isOpenNotificationDrop);
+
+    const context = useContext(MyContext)
 
     const handleOpenMyAccDrop = (event) => {
         setAnchorEl(event.currentTarget);
@@ -51,7 +54,11 @@ const Header = () => {
                         </div>
 
                         <div className="col-sm-3 d-flex align-items-center part2 pl-4">
-                            <Button className='rounded-circle mr-3'><MdMenuOpen /></Button>
+                            <Button className='rounded-circle mr-3' onClick={() => context.setisToggleSidebar(!context.isToggleSidebar)}>
+                                {
+                                    context.isToggleSidebar === false ? < MdMenuOpen /> : <MdOutlineMenu />
+                                }
+                            </Button>
                             <SearchBox />
                         </div>
                         <div className="col-sm-7 d-flex align-items-center justify-content-end part3">
@@ -242,7 +249,7 @@ const Header = () => {
                                                 </div>
                                             </div>
                                         </MenuItem>
-                                          <hr className='mt-0 mb-1' />
+                                        <hr className='mt-0 mb-1' />
                                     </div>
                                     <div className="w-100 pl-3 pr-3 mb-0">
                                         <Button className='btn-blue w-100'>View all Notification</Button>

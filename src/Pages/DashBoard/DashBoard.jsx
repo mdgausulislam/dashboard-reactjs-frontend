@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
 import './DashBoard.css'
 import DashboardBox from './DashboardBox/DashboardBox';
-import { FaUserCircle } from 'react-icons/fa';
+import { FaEye, FaPencilAlt, FaUserCircle } from 'react-icons/fa';
 import { IoIosTimer, IoMdCart } from 'react-icons/io';
-import { MdShoppingBag } from 'react-icons/md';
+import { MdDelete, MdShoppingBag } from 'react-icons/md';
 import { GiStarsStack } from 'react-icons/gi';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { HiDotsVertical } from 'react-icons/hi';
 import { Button } from '@mui/material';
 import { AreaChart, Area, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import Pagination from '@mui/material/Pagination';
 
 const data = [
     {
@@ -58,6 +61,11 @@ const data = [
 
 const DashBoard = () => {
     const [anchorEl, setAnchorEl] = useState(null);
+    const [showBy, setShowBy] = useState('');
+    const [categoryBy, setCategoryBy] = useState('');
+    const [brandBy, setBrandBy] = useState('');
+    const [searchBy, setSearchBy] = useState('');
+
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -65,6 +73,7 @@ const DashBoard = () => {
     const handleClose = () => {
         setAnchorEl(null);
     };
+
 
     const ITEM_HEIGHT = 48;
     return (
@@ -145,15 +154,300 @@ const DashBoard = () => {
                 <div className="card shadow border-0 p-3 mt-4">
                     <h3 className='hd'>Best Selling Products</h3>
 
-                    <div className="row cardFilters">
-                        <div className="col">
+                    <div className="row cardFilters mt-3">
+                        <div className="col-md-3">
                             <h4>Show By</h4>
+                            <FormControl size="small" className='w-100'>
+                                <Select
+                                    value={showBy}
+                                    onChange={(e) => setShowBy(e.target.value)}
+                                    displayEmpty
+                                    inputProps={{ 'aria-label': 'Without label' }}
+                                    className='w-100'
+                                >
+                                    <MenuItem value="">
+                                        <em>None</em>
+                                    </MenuItem>
+                                    <MenuItem value={10}>Ten</MenuItem>
+                                    <MenuItem value={20}>Twenty</MenuItem>
+                                    <MenuItem value={30}>Thirty</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </div>
+                        <div className="col-md-3">
+                            <h4>CATEGORY BY</h4>
+                            <FormControl size="small" className='w-100'>
+                                <Select
+                                    value={categoryBy}
+                                    onChange={(e) => setCategoryBy(e.target.value)}
+                                    displayEmpty
+                                    inputProps={{ 'aria-label': 'Without label' }}
+                                    className='w-100'
+                                >
+                                    <MenuItem value="">
+                                        <em>None</em>
+                                    </MenuItem>
+                                    <MenuItem value={10}>Ten</MenuItem>
+                                    <MenuItem value={20}>Twenty</MenuItem>
+                                    <MenuItem value={30}>Thirty</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </div>
+                        <div className="col-md-3">
+                            <h4>BRAND BY</h4>
+                            <FormControl size="small" className='w-100'>
+                                <Select
+                                    value={brandBy}
+                                    onChange={(e) => setBrandBy(e.target.value)}
+                                    displayEmpty
+                                    inputProps={{ 'aria-label': 'Without label' }}
+                                    className='w-100'
+                                >
+                                    <MenuItem value="">
+                                        <em>None</em>
+                                    </MenuItem>
+                                    <MenuItem value={10}>Ten</MenuItem>
+                                    <MenuItem value={20}>Twenty</MenuItem>
+                                    <MenuItem value={30}>Thirty</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </div>
+                        <div className="col-md-3">
+                            <h4>SEARCH BY</h4>
+                            <FormControl size="small" className='w-100'>
+                                <Select
+                                    value={searchBy}
+                                    onChange={(e) => setSearchBy(e.target.value)}
+                                    displayEmpty
+                                    inputProps={{ 'aria-label': 'Without label' }}
+                                    className='w-100'
+                                >
+                                    <MenuItem value="">
+                                        <em>None</em>
+                                    </MenuItem>
+                                    <MenuItem value={10}>Ten</MenuItem>
+                                    <MenuItem value={20}>Twenty</MenuItem>
+                                    <MenuItem value={30}>Thirty</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </div>
+                    </div>
+
+                    <div className="table-responsive mt-3">
+                        <table className="table table-bordered v-align">
+                            <thead className='thead-dark'>
+                                <tr>
+                                    <th>UID</th>
+                                    <th>Product</th>
+                                    <th>Category</th>
+                                    <th>Brand</th>
+                                    <th>Price</th>
+                                    <th>Srock</th>
+                                    <th>Rating</th>
+                                    <th>Order</th>
+                                    <th>Sales</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#1</td>
+                                    <td>
+                                        <div className="d-flex align-items-center productBox">
+
+                                            <div className="imgWrapper">
+                                                <div className="img">
+                                                    <img src="https://mironcoder-hotash.netlify.app/images/product/01.webp" alt="" className='w-100' />
+                                                </div>
+                                            </div>
+                                            <div className="ProductInfo">
+                                                <h6>Tops and skirt set for Female...</h6>
+                                                <p>Women's exclusive summer Tops and skirt set for Female Tops and skirt set</p>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                    <td>womans</td>
+                                    <td>richman</td>
+                                    <td>
+                                        <del className='old'>$19.00</del>
+                                        <span className='new text-danger'>$19.00</span>
+                                    </td>
+                                    <td>30</td>
+                                    <td>4.9(16)</td>
+                                    <td>380</td>
+                                    <td>$38k</td>
+                                    <td>
+                                        <div className="actions d-flex align-items-center">
+                                            <Button className='secondary' color="secondary"> <FaEye /></Button>
+                                            <Button className='success' color="success"> <FaPencilAlt /></Button>
+                                            <Button className='error' color="error"> <MdDelete /></Button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#1</td>
+                                    <td>
+                                        <div className="d-flex align-items-center productBox">
+
+                                            <div className="imgWrapper">
+                                                <div className="img">
+                                                    <img src="https://mironcoder-hotash.netlify.app/images/product/01.webp" alt="" className='w-100' />
+                                                </div>
+                                            </div>
+                                            <div className="ProductInfo">
+                                                <h6>Tops and skirt set for Female...</h6>
+                                                <p>Women's exclusive summer Tops and skirt set for Female Tops and skirt set</p>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                    <td>womans</td>
+                                    <td>richman</td>
+                                    <td>
+                                        <del className='old'>$19.00</del>
+                                        <span className='new text-danger'>$19.00</span>
+                                    </td>
+                                    <td>30</td>
+                                    <td>4.9(16)</td>
+                                    <td>380</td>
+                                    <td>$38k</td>
+                                    <td>
+                                        <div className="actions d-flex align-items-center">
+                                            <Button className='secondary' color="secondary"> <FaEye /></Button>
+                                            <Button className='success' color="success"> <FaPencilAlt /></Button>
+                                            <Button className='error' color="error"> <MdDelete /></Button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#1</td>
+                                    <td>
+                                        <div className="d-flex align-items-center productBox">
+
+                                            <div className="imgWrapper">
+                                                <div className="img">
+                                                    <img src="https://mironcoder-hotash.netlify.app/images/product/01.webp" alt="" className='w-100' />
+                                                </div>
+                                            </div>
+                                            <div className="ProductInfo">
+                                                <h6>Tops and skirt set for Female...</h6>
+                                                <p>Women's exclusive summer Tops and skirt set for Female Tops and skirt set</p>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                    <td>womans</td>
+                                    <td>richman</td>
+                                    <td>
+                                        <del className='old'>$19.00</del>
+                                        <span className='new text-danger'>$19.00</span>
+                                    </td>
+                                    <td>30</td>
+                                    <td>4.9(16)</td>
+                                    <td>380</td>
+                                    <td>$38k</td>
+                                    <td>
+                                        <div className="actions d-flex align-items-center">
+                                            <Button className='secondary' color="secondary"> <FaEye /></Button>
+                                            <Button className='success' color="success"> <FaPencilAlt /></Button>
+                                            <Button className='error' color="error"> <MdDelete /></Button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#1</td>
+                                    <td>
+                                        <div className="d-flex align-items-center productBox">
+
+                                            <div className="imgWrapper">
+                                                <div className="img">
+                                                    <img src="https://mironcoder-hotash.netlify.app/images/product/01.webp" alt="" className='w-100' />
+                                                </div>
+                                            </div>
+                                            <div className="ProductInfo">
+                                                <h6>Tops and skirt set for Female...</h6>
+                                                <p>Women's exclusive summer Tops and skirt set for Female Tops and skirt set</p>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                    <td>womans</td>
+                                    <td>richman</td>
+                                    <td>
+                                        <del className='old'>$19.00</del>
+                                        <span className='new text-danger'>$19.00</span>
+                                    </td>
+                                    <td>30</td>
+                                    <td>4.9(16)</td>
+                                    <td>380</td>
+                                    <td>$38k</td>
+                                    <td>
+                                        <div className="actions d-flex align-items-center">
+                                            <Button className='secondary' color="secondary"> <FaEye /></Button>
+                                            <Button className='success' color="success"> <FaPencilAlt /></Button>
+                                            <Button className='error' color="error"> <MdDelete /></Button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#1</td>
+                                    <td>
+                                        <div className="d-flex align-items-center productBox">
+
+                                            <div className="imgWrapper">
+                                                <div className="img">
+                                                    <img src="https://mironcoder-hotash.netlify.app/images/product/01.webp" alt="" className='w-100' />
+                                                </div>
+                                            </div>
+                                            <div className="ProductInfo">
+                                                <h6>Tops and skirt set for Female...</h6>
+                                                <p>Women's exclusive summer Tops and skirt set for Female Tops and skirt set</p>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                    <td>womans</td>
+                                    <td>richman</td>
+                                    <td>
+                                        <del className='old'>$19.00</del>
+                                        <span className='new text-danger'>$19.00</span>
+                                    </td>
+                                    <td>30</td>
+                                    <td>4.9(16)</td>
+                                    <td>380</td>
+                                    <td>$38k</td>
+                                    <td>
+                                        <div className="actions d-flex align-items-center">
+                                            <Button className='secondary' color="secondary"> <FaEye /></Button>
+                                            <Button className='success' color="success"> <FaPencilAlt /></Button>
+                                            <Button className='error' color="error"> <MdDelete /></Button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div className="d-flex tableFooter">
+                            <p>showing <b>12</b> of <b>60</b> results</p>
+                            <Pagination count={10} color="primary" className='pagination' />
                         </div>
                     </div>
                 </div>
-            </section>
+            </section >
         </>
     );
 };
 
 export default DashBoard;
+
+{/* <div className="action d-flex align-items-center">
+    <Button>
+        <FaEye />
+    </Button>
+    <Button color=''>
+        <FaPencilAlt />
+    </Button>
+    <Button>
+        <MdDelete />
+    </Button>
+</div> */}

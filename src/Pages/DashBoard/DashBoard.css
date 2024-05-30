@@ -1,5 +1,6 @@
 .right-content {
   padding: 90px 30px;
+  padding-bottom: 10px !important;
 }
 
 .dashboardBoxWrapper {
@@ -74,7 +75,7 @@
 
 .chart {
   position: absolute;
-  opacity: 0.1;
+  opacity: 0.06;
   bottom: 20px;
   left: 20px;
 }
@@ -109,19 +110,13 @@
   opacity: 0.7;
 }
 
-.recharts{
+.recharts {
   padding: 0px 3px !important;
   bottom: 0 !important;
 }
-.areaCharts{
+.areaCharts {
   opacity: 0.4;
 }
-
-
-
-
-
-
 .card {
   margin: 20px 0px;
   border-radius: 10px;
@@ -130,4 +125,111 @@
   font-size: 18px;
   font-weight: 600;
   color: #403e57;
+}
+
+.cardFilters .col-md-3 h4 {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  text-transform: capitalize;
+  color: #403e57;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: #403e57;
+}
+
+.table .thead-dark th {
+  background-color: #1866ee !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  font-size: 13px !important;
+}
+
+.table .tbody td {
+  font-size: 14px !important;
+  color: #2f2d3e;
+  font-weight: 500;
+}
+
+.actions button {
+  min-width: 32px !important;
+  width: 32px !important;
+  height: 32px !important;
+  margin: 0px 3px !important;
+}
+.actions button.secondary {
+  background: rgba(203, 60, 231, 0.2) !important;
+}
+.actions button.success {
+  background: rgba(26, 59, 183, 0.2) !important;
+}
+.actions button.error {
+  background: rgba(241, 17, 51, 0.2) !important;
+}
+.actions button svg {
+  font-size: 32px !important;
+}
+
+.v-align td {
+  vertical-align: middle;
+}
+
+.old,
+.new {
+  display: block;
+  width: 100%;
+}
+table td .imgWrapper {
+  width: 35%;
+  flex: 0 0 35%;
+}
+
+table td .ProductInfo {
+  width: 65%;
+  flex: 0 0 65%;
+}
+
+table td .ProductInfo h6 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 0px;
+}
+
+table td .ProductInfo p {
+  font-size: 13px;
+  line-height: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #5e5d72;
+  margin-bottom: 0px;
+}
+
+table.v-align td .productBox {
+  width: 180px;
+}
+
+.tableFooter {
+  padding-bottom: 20px;
+}
+.tableFooter p {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 0px;
+}
+
+.tableFooter .pagination {
+  margin-left: auto;
+}
+
+.css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+  background-color: #2a6ff7 !important;
 }

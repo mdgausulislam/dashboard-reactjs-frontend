@@ -19,6 +19,7 @@
 body {
   font-family: "Open Sans", sans-serif !important;
   background: #ebe9e9 !important;
+  overflow-x: hidden;
 }
 
 .btn-blue {
@@ -33,11 +34,25 @@ body {
 .main .sidebarWrapper {
   width: 20%;
   flex: 0 0 20%;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s;
 }
+.main .sidebarWrapper.toggle {
+  width: 0%;
+  flex: 0 0 0%;
+}
+
+.main .sidebarWrapper.toggle .sidebar {
+  left: -100%;
+}
+
 .main .content {
   width: 80%;
   flex: 0 0 80%;
+  transition: all 0.3s;
+}
+.main .content.toggle {
+  width: 100%;
+  flex: 0 0 100%;
 }
 
 .main .sidebarWrapper:hover .sidebar::-webkit-scrollbar {

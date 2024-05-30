@@ -1,16 +1,20 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './Sidebar.css'
 import { Button } from '@mui/material';
 import { FaAngleRight, FaBell, FaCartArrowDown, FaProductHunt } from 'react-icons/fa';
 import { MdDashboard, MdMessage } from 'react-icons/md';
 import { IoIosSettings, IoMdLogOut } from 'react-icons/io';
 import { Link } from 'react-router-dom';
+import { MyContext } from '../../App';
 
 
 const Sidebar = () => {
 
     const [activeTab, setActiveTab] = useState(0);
     const [isToggleSubMenu, setisToggleSubMenu] = useState(false)
+    
+    const context = useContext(MyContext)
+
     const isOpenSubMenu = (index) => {
         setActiveTab(index);
         setisToggleSubMenu(!isToggleSubMenu)
