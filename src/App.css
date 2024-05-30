@@ -28,7 +28,38 @@ body {
   font-weight: 500 !important;
   color: #fff !important;
   text-transform: capitalize !important;
-  border-radius: 5px;
+  border-radius: 8px !important;
+}
+
+.btn-lg {
+  padding: 7px 25px !important;
+}
+.btn-big {
+  padding: 10px 25px !important;
+  font-size: 16px !important;
+}
+
+.btn-rounded {
+  border-radius: 30px !important;
+}
+
+.full {
+  width: 100% !important;
+  max-width: 100% !important;
+  flex: 0 0 100% !important;
+}
+
+.link {
+  color: #5e5d72;
+  font-weight: 600;
+}
+.link:hover {
+  color: #0858f7;
+  text-decoration: none;
+}
+
+.link.color {
+  color: #0858f7;
 }
 
 .main .sidebarWrapper {

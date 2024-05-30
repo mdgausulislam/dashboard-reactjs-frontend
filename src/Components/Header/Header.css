@@ -40,6 +40,10 @@ header button.rounded-circle:hover svg {
   color: #0858f7 !important;
 }
 
+header .part2 {
+  padding-left: 50px !important;
+}
+
 .myAcc {
   text-align: left !important;
   color: #0858f7 !important;
