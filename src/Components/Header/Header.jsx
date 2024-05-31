@@ -16,6 +16,7 @@ import PersonAdd from '@mui/icons-material/PersonAdd';
 import Logout from '@mui/icons-material/Logout';
 import { FaShieldHalved } from 'react-icons/fa6';
 import { MyContext } from '../../App';
+import UserAvatar from '../../Pages/UserAvatar/UserAvatar';
 
 const Header = () => {
     const [anchorEl, setAnchorEl] = useState(null);
@@ -263,14 +264,12 @@ const Header = () => {
                                 </Link> :
                                     <div className="myAccWrapper">
                                         <Button className="myAcc d-flex align-items-center" onClick={handleOpenMyAccDrop}>
-                                            <div className="userImg">
-                                                <span className="rounded-circle">
-                                                    <img src="https://mironcoder-hotash.netlify.app/images/avatar/01.webp" alt="User Avatar" />
-                                                </span>
+                                            <div>
+                                                <UserAvatar img={'https://mironcoder-hotash.netlify.app/images/avatar/01.webp'} />
                                             </div>
                                             <div className="userInfo">
                                                 <h4>Md Gousul Islam</h4>
-                                                <p className='mb-0'>gausulislam5</p>
+                                                <p className='mb-0'>gausulislam5@</p>
                                             </div>
                                         </Button>
                                         <Menu
@@ -303,9 +302,6 @@ const Header = () => {
                                         </Menu>
                                     </div>
                             }
-
-
-
                         </div>
                     </div>
                 </div>

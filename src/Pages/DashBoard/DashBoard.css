@@ -164,10 +164,9 @@ body.dark h4,
 body.dark h5,
 body.dark h6,
 body.dark p,
-body.dark span,
 body.dark .css-hfutr2-MuiSvgIcon-root-MuiSelect-icon,
 body.dark .css-bpeome-MuiSvgIcon-root-MuiSelect-icon {
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
 }
 
 body.dark .css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {

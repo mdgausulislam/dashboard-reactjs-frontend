@@ -23,6 +23,7 @@ body {
 }
 body.dark {
   background: #071739 !important;
+  color: #b4b4b4 !important;
 }
 
 .btn-blue {
@@ -71,6 +72,15 @@ body.dark {
 
 h4 {
   line-height: 32px;
+}
+p {
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 25px;
+}
+
+body.light p {
+  font-weight: 400;
 }
 
 .main .sidebarWrapper {

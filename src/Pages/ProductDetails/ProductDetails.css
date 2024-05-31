@@ -25,8 +25,12 @@ body.dark .css-1wuw8dw-MuiBreadcrumbs-separator {
   padding-right: 10px !important;
 }
 
+.sliderSmall .slick-current .item {
+  border: 1px dashed #d6cece !important;
+}
+
 .sliderSmall .slick-slide .item {
-  border-radius: 7px;
+  border-radius: 7px !important;
   overflow: hidden;
 }
 .sliderSmall *,
@@ -36,19 +40,36 @@ body.dark .css-1wuw8dw-MuiBreadcrumbs-separator {
 .sliderBig .item {
   overflow: hidden;
   border-radius: 7px;
+  border: 2px dashed #ccc !important;
 }
+.sliderSmall .item {
+  overflow: hidden;
+  border-radius: 7px;
+  border: 1px dashed #ccc !important;
+  cursor: pointer;
+}
+
 .productDetailsSection .productInfo .icon {
   width: 28%;
   flex: 0 0 28%;
 }
+body.light .productDetailsSection .productInfo .icon svg {
+  color: #5e5d72 !important;
+}
+
 .productDetailsSection .productInfo .icon svg {
   font-size: 22px;
 }
 .productDetailsSection .productInfo .name {
   width: 72%;
   flex: 0 0 72%;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 15px;
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+body.light .productDetailsSection .productInfo .name {
+  color: #5e5d72 !important;
 }
 
 .productDetailsSection .productInfo .row {
@@ -64,27 +85,186 @@ body.dark .css-1wuw8dw-MuiBreadcrumbs-separator {
   padding-left: 20px;
 }
 
-body.dark .col-sm-9 {
+/* body.dark .col-sm-9 {
   color: rgba(255, 255, 255, 0.8);
-}
+} */
+
+/* body.dark .tags li span {
+  background: #1b2b4d !important;
+} */
 
 .tags {
   margin-bottom: 0px !important;
-}
-
-body.dark .tags li span {
-  background: #1b2b4d !important;
 }
 
 .tags li span {
   display: flex;
   align-items: center;
   justify-content: center;
+  background: #1b2b4d !important;
   border-radius: 5px !important;
   font-size: 13px !important;
   padding: 5px 10px !important;
 }
 
+.tags li {
+  margin: 3px 5px;
+}
+
+body.light .tags li span {
+  background: #f0f0f0 !important;
+  color: #000 !important;
+  padding: 4px 10px !important;
+}
+
 .tags li span:first-child {
   padding-left: 0px !important;
+}
+body.light .tags li span:first-child {
+  padding-left: 0px !important;
+}
+
+.ratingSection {
+  width: 100%;
+  padding-left: 150px;
+}
+.ratingSection .ratingRow {
+  width: 100%;
+  margin-bottom: 15px !important;
+}
+
+.ratingSection .ratingRow .progress {
+  height: 6px !important;
+  background-color: #000 !important;
+}
+
+body.light .ratingSection .ratingRow .progress {
+  background: #ccc !important;
+}
+
+.ratingSection .ratingRow .progress .progress-bar {
+  background: #edb213 !important;
+}
+
+.ratingSection .ratingRow .col1 {
+  width: 15%;
+  flex: 0 0 15%;
+  display: flex;
+}
+.ratingSection .ratingRow .col2 {
+  width: 50%;
+  flex: 0 0 50%;
+}
+.ratingSection .ratingRow .col3 {
+  width: 25%;
+  flex: 0 0 25%;
+  display: flex;
+  padding-left: 20px;
+}
+
+.mc-review-analytics-detail-group {
+  text-align: center;
+}
+
+.mc-review-analytics-total {
+  color: #b4b4b4;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
+
+.mc-review-analytics-score {
+  font-size: 80px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 60px;
+  margin-bottom: 20px;
+  color: #e4e4e4;
+}
+
+body.light .mc-review-analytics-score {
+  color: #e4e4e4 !important;
+  opacity: 0.7 !important;
+}
+
+.mc-review-analytics-text {
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #e4e4e4;
+}
+
+.reviewsSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.reviewsSection .reviewsRow {
+  width: 100%;
+  height: auto;
+  background: #071739;
+  padding: 35px;
+  border-radius: 10px;
+  margin: 15px 0px;
+}
+
+body.light .reviewsSection .reviewsRow {
+  background: #ededed !important;
+}
+
+.userInfo h6 {
+  margin-bottom: 0px;
+}
+
+.reviewsSection .reviewsRow p {
+  padding-left: 20px !important;
+}
+
+.reviewsSection .reviewsRow.reply {
+  width: 90%;
+  margin-left: auto;
+}
+
+.reviewsSection .reviewsRow .btn-big {
+  font-size: 15px !important;
+}
+.reviewsSection .reviewsRow .btn-big svg {
+  font-size: 20px !important;
+}
+
+.userImg.lg {
+  width: 60px !important;
+  height: 60px !important;
+}
+
+body.dark .custom-rating .MuiRating-iconEmpty {
+  color: #ccc !important;
+}
+
+.reviewForm {
+  width: 100%;
+}
+.reviewForm textarea {
+  width: 100%;
+  height: 200px;
+  background: #132345 !important;
+  outline: navajowhite;
+  padding: 15px;
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.7) !important;
+  border: 1px solid #0d1b38;
+}
+
+body.light .reviewForm textarea {
+  background: #f4f4f4 !important;
+  color: rgba(0, 0, 0, 0.8) !important;
+  border: 1px solid #dbdbdb !important;
+}
+
+.reviewForm textarea::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+body.light .reviewForm textarea::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.5) !important;
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { emphasize, styled } from '@mui/material/styles';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Chip from '@mui/material/Chip';
@@ -7,7 +7,10 @@ import Slider from "react-slick";
 import './ProductDetails.css'
 import { MdBrandingWatermark } from 'react-icons/md';
 import { BiSolidCategoryAlt } from 'react-icons/bi';
-
+import UserAvatar from '../UserAvatar/UserAvatar';
+import Rating from '@mui/material/Rating';
+import { Button } from '@mui/material';
+import { FaReply } from 'react-icons/fa';
 
 
 //bredcrumb
@@ -32,7 +35,11 @@ const StyledBreadcrumb = styled(Chip)(({ theme }) => {
     };
 });
 
+
 const ProductDetails = () => {
+
+    const productSliderBig = useRef()
+    const productSliderSml = useRef()
 
     var productSliderOption = {
         dots: false,
@@ -50,6 +57,11 @@ const ProductDetails = () => {
         slidesToScroll: 1,
         arrows: false
     };
+
+    const goToSlide = (index) => {
+        productSliderBig.current.slickGoTo(index)
+        productSliderSml.current.slickGoTo(index)
+    }
 
     return (
         <>
@@ -78,27 +90,39 @@ const ProductDetails = () => {
 
                     <div className="row">
                         <div className="col-md-5">
-                            <div className="sliderWrapper pt-3 pb-3  pl-4 pr-4">
+                            <div className="sliderWrapper pt-3 pb-3 pl-4 pr-4">
                                 <h6 className='mb-4'>Product Gallery</h6>
-                                <Slider {...productSliderOption} className='sliderBig mb-2'>
+                                <Slider {...productSliderOption} ref={productSliderBig} className='sliderBig mb-2'>
+                                    <div className='item'>
+                                        <img src="https://mironcoder-hotash.netlify.app/images/product/single/01.webp" alt="" className='w-100' />
+                                    </div>
+                                    <div className='item'>
+                                        <img src="https://mironcoder-hotash.netlify.app/images/product/single/01.webp" alt="" className='w-100' />
+                                    </div>
+                                    <div className='item'>
+                                        <img src="https://mironcoder-hotash.netlify.app/images/product/single/01.webp" alt="" className='w-100' />
+                                    </div>
+                                    <div className='item'>
+                                        <img src="https://mironcoder-hotash.netlify.app/images/product/single/01.webp" alt="" className='w-100' />
+                                    </div>
                                     <div className='item'>
                                         <img src="https://mironcoder-hotash.netlify.app/images/product/single/01.webp" alt="" className='w-100' />
                                     </div>
                                 </Slider>
-                                <Slider {...productSliderSmlOption} className='sliderSmall'>
-                                    <div className='item'>
+                                <Slider {...productSliderSmlOption} ref={productSliderSml} className='sliderSmall'>
+                                    <div className='item' onClick={() => goToSlide(1)}>
                                         <img src="https://mironcoder-hotash.netlify.app/images/product/single/02.webp" alt="" className='w-100' />
                                     </div>
-                                    <div className='item'>
+                                    <div className='item' onClick={() => goToSlide(2)}>
                                         <img src="https://mironcoder-hotash.netlify.app/images/product/single/04.webp" alt="" className='w-100' />
                                     </div>
-                                    <div className='item'>
+                                    <div className='item' onClick={() => goToSlide(3)}>
                                         <img src="https://mironcoder-hotash.netlify.app/images/product/single/03.webp" alt="" className='w-100' />
                                     </div>
-                                    <div className='item'>
+                                    <div className='item' onClick={() => goToSlide(4)}>
                                         <img src="https://mironcoder-hotash.netlify.app/images/product/single/05.webp" alt="" className='w-100' />
                                     </div>
-                                    <div className='item'>
+                                    <div className='item' onClick={() => goToSlide(5)}>
                                         <img src="https://mironcoder-hotash.netlify.app/images/product/single/01.webp" alt="" className='w-100' />
                                     </div>
 
@@ -108,11 +132,11 @@ const ProductDetails = () => {
                         </div>
                         <div className="col-md-7">
 
-                            <div className="sliderWrapper pt-3 pb-3  pl-4 pr-4">
+                            <div className="sliderWrapper pt-3 pb-3 pl-4 pr-4">
                                 <h6 className='mb-4'>Product Details</h6>
                                 <h4>Formal suits for men wedding slim fit 3 piece dress business party jacket</h4>
 
-                                <div className="productInfo mt-3">
+                                <div className="productInfo mt-4">
                                     <div className="row mb-2">
                                         <div className="col-sm-3 d-flex align-items-center">
                                             <span className="icon"><MdBrandingWatermark /></span>
@@ -262,8 +286,214 @@ const ProductDetails = () => {
                         </div>
                     </div>
 
-                    <h4 className='mt-4'>Product Description</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae reprehenderit repellendus expedita esse cupiditate quos doloremque rerum, corrupti ab illum est nihil, voluptate ex dignissimos! Sit voluptatem delectus nam, molestiae, repellendus ab sint quo aliquam debitis amet natus doloremque laudantium? Repudiandae, consequuntur, officiis quidem quo deleniti, autem non laudantium sequi error molestiae ducimus accusamus facere velit consectetur vero dolore natus nihil temporibus aspernatur quia consequatur? Consequuntur voluptate deserunt repellat tenetur debitis molestiae doloribus dicta. In rem illum dolorem atque ratione voluptates asperiores maxime doloremque laudantium magni neque ad quae quos quidem, quaerat rerum ducimus blanditiis reiciendis</p>
+                    <div className="p-4">
+                        <h6 className='mt-4 mb-4'>Product Description</h6>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae reprehenderit repellendus expedita esse cupiditate quos doloremque rerum, corrupti ab illum est nihil, voluptate ex dignissimos! Sit voluptatem delectus nam, molestiae, repellendus ab sint quo aliquam debitis amet natus doloremque laudantium? Repudiandae, consequuntur, officiis quidem quo deleniti, autem non laudantium sequi error molestiae ducimus accusamus facere velit consectetur vero dolore natus nihil temporibus aspernatur quia consequatur? Consequuntur voluptate deserunt repellat tenetur debitis molestiae doloribus dicta. In rem illum dolorem atque ratione voluptates asperiores maxime doloremque laudantium magni neque ad quae quos quidem, quaerat rerum ducimus blanditiis reiciendis</p>
+
+                        <br />
+
+                        <h6 className='mt-4 mb-3'>Rating Analytics</h6>
+                        <div className="ratingSection">
+                            <div className="row d-flex align-items-center justify-content-center">
+                                <div className="col-md-6">
+                                    <div className="ratingRow d-flex align-items-center">
+                                        <span className="col1">
+                                            5 Star
+                                        </span>
+                                        <div className="col2">
+                                            <div className="progress">
+                                                <div className="progress-bar" style={{ width: "70%" }}></div>
+                                            </div>
+                                        </div>
+
+                                        <span className="col3">
+                                            (22)
+                                        </span>
+                                    </div>
+                                    <div className="ratingRow d-flex align-items-center">
+                                        <span className="col1">
+                                            4 Star
+                                        </span>
+                                        <div className="col2">
+                                            <div className="progress">
+                                                <div className="progress-bar" style={{ width: "60%" }}></div>
+                                            </div>
+                                        </div>
+
+                                        <span className="col3">
+                                            (6)
+                                        </span>
+                                    </div>
+                                    <div className="ratingRow d-flex align-items-center">
+                                        <span className="col1">
+                                            3 Star
+                                        </span>
+                                        <div className="col2">
+                                            <div className="progress">
+                                                <div className="progress-bar" style={{ width: "30%" }}></div>
+                                            </div>
+                                        </div>
+
+                                        <span className="col3">
+                                            (5)
+                                        </span>
+                                    </div>
+                                    <div className="ratingRow d-flex align-items-center">
+                                        <span className="col1">
+                                            2 Star
+                                        </span>
+                                        <div className="col2">
+                                            <div className="progress">
+                                                <div className="progress-bar" style={{ width: "20%" }}></div>
+                                            </div>
+                                        </div>
+
+                                        <span className="col3">
+                                            (3)
+                                        </span>
+                                    </div>
+                                    <div className="ratingRow d-flex align-items-center">
+                                        <span className="col1">
+                                            1 Star
+                                        </span>
+                                        <div className="col2">
+                                            <div className="progress">
+                                                <div className="progress-bar" style={{ width: "10%" }}></div>
+                                            </div>
+                                        </div>
+
+                                        <span className="col3">
+                                            (2)
+                                        </span>
+                                    </div>
+                                </div>
+                                <div className="col-md-6">
+                                    {/* <div className="ratingRow d-flex align-items-center">
+                                       
+                                    </div> */}
+
+                                    <div class="mc-review-analytics-detail-group"><h3 class="mc-review-analytics-total">total review (38)</h3><h4 class="mc-review-analytics-score">4.9</h4>
+                                        <div class="mc-review-analytics-star">
+                                            <Rating name="read-only" value={4.6} readOnly precision={0.2} size='small' className='custom-rating'/>
+                                        </div>
+                                        <p class="mc-review-analytics-text">your average rating star</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <br />
+                        <h6 className='mt-4 mb-3'>Customer_reviews</h6>
+                        <div className="reviewsSection">
+                            <div className="reviewsRow">
+                                <div className="row">
+                                    <div className="col-sm-7 d-flex">
+                                        <div className="d-flex flex-column">
+                                            <div className="userInfo d-flex align-items-center mb-3">
+                                                <UserAvatar img={'https://mironcoder-hotash.netlify.app/images/avatar/01.webp'} lg={true} />
+
+                                                <div className="info pl-3">
+                                                    <h6>Miron Mahmud</h6>
+                                                    <span>25 minutes ago!</span>
+                                                </div>
+                                            </div>
+                                            <Rating name="read-only" value={4.5} readOnly precision={0.5} size="small" className="custom-rating" />
+                                        </div>
+                                    </div>
+                                    <div className="col-sm-5 d-flex align-items-center">
+                                        <div className="ml-auto">
+                                            <Button className='btn-blue btn-lg ml-auto btn-big'><FaReply /> Reply</Button>
+                                        </div>
+                                    </div>
+                                    <p className='mt-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis quo nostrum dolore fugiat ducimus labore debitis unde autem recusandae? Eius harum tempora quis minima, adipisci natus quod magni omnis quas.</p>
+                                </div>
+                            </div>
+
+                            <div className="reviewsRow reply">
+                                <div className="row">
+                                    <div className="col-sm-7 d-flex">
+                                        <div className="d-flex flex-column">
+                                            <div className="userInfo d-flex align-items-center mb-3">
+                                                <UserAvatar img={'https://mironcoder-hotash.netlify.app/images/avatar/01.webp'} lg={true} />
+
+                                                <div className="info pl-3">
+                                                    <h6>Miron Mahmud</h6>
+                                                    <span>25 minutes ago!</span>
+                                                </div>
+                                            </div>
+
+
+                                            <Rating name="read-only" value={3} readOnly precision={0.5} size="small" className="custom-rating" />
+
+                                        </div>
+                                    </div>
+                                    <div className="col-sm-5 d-flex align-items-center">
+                                        <div className="ml-auto">
+                                            <Button className='btn-blue btn-lg ml-auto btn-big'><FaReply /> Reply</Button>
+                                        </div>
+                                    </div>
+                                    <p className='mt-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis quo nostrum dolore fugiat ducimus labore debitis unde autem recusandae? Eius harum tempora quis minima, adipisci natus quod magni omnis quas.</p>
+                                </div>
+                            </div>
+
+                            <div className="reviewsRow reply">
+                                <div className="row">
+                                    <div className="col-sm-7 d-flex">
+                                        <div className="d-flex flex-column">
+                                            <div className="userInfo d-flex align-items-center mb-3">
+                                                <UserAvatar img={'https://mironcoder-hotash.netlify.app/images/avatar/01.webp'} lg={true} />
+
+                                                <div className="info pl-3">
+                                                    <h6>Miron Mahmud</h6>
+                                                    <span>25 minutes ago!</span>
+                                                </div>
+                                            </div>
+                                            <Rating name="read-only" value={4} readOnly precision={0.5} size="small" className="custom-rating" />
+                                        </div>
+                                    </div>
+                                    <div className="col-sm-5 d-flex align-items-center">
+                                        <div className="ml-auto">
+                                            <Button className='btn-blue btn-lg ml-auto btn-big'><FaReply /> Reply</Button>
+                                        </div>
+                                    </div>
+                                    <p className='mt-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis quo nostrum dolore fugiat ducimus labore debitis unde autem recusandae? Eius harum tempora quis minima, adipisci natus quod magni omnis quas.</p>
+                                </div>
+                            </div>
+
+                            <div className="reviewsRow">
+                                <div className="row">
+                                    <div className="col-sm-7 d-flex">
+                                        <div className="d-flex flex-column">
+                                            <div className="userInfo d-flex align-items-center mb-3">
+                                                <UserAvatar img={'https://mironcoder-hotash.netlify.app/images/avatar/01.webp'} lg={true} />
+
+                                                <div className="info pl-3">
+                                                    <h6>Miron Mahmud</h6>
+                                                    <span>25 minutes ago!</span>
+                                                </div>
+                                            </div>
+                                            <Rating name="read-only" value={4.5} readOnly precision={0.5} size="small" className="custom-rating" />
+                                        </div>
+                                    </div>
+                                    <div className="col-sm-5 d-flex align-items-center">
+                                        <div className="ml-auto">
+                                            <Button className='btn-blue btn-lg ml-auto btn-big'><FaReply /> Reply</Button>
+                                        </div>
+                                    </div>
+                                    <p className='mt-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis quo nostrum dolore fugiat ducimus labore debitis unde autem recusandae? Eius harum tempora quis minima, adipisci natus quod magni omnis quas.</p>
+                                </div>
+                            </div>
+
+                            <div className="reviewsForm">
+                                <h6 className='mt-4 mb-3'>Review Reply Form</h6>
+                                <form action="" className="reviewForm">
+                                    <textarea placeholder='Write here' />
+
+                                    <Button className='w-100 btn-blue btn-lg btn-big mt-4'>Drop your replies</Button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </>
