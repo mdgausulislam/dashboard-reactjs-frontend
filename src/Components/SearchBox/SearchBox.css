@@ -6,6 +6,10 @@
   padding: 3px 15px;
 }
 
+body.dark .searchBox {
+  background: #12254e !important;
+}
+
 .searchBox input {
   background: transparent;
   border: 0px;
@@ -13,6 +17,12 @@
   padding-left: 0px;
   font-size: 14px;
   color: #292929;
+}
+
+body.dark .searchBox input,
+body.dark .searchBox input::-webkit-input-placeholder,
+body.dark .searchBox svg {
+  color: rgba(255, 255, 255, 0.7);
 }
 .searchBox input::-webkit-input-placeholder {
   color: rgba(0, 0, 0, 0.6);

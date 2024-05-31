@@ -10,6 +10,10 @@ header {
   backdrop-filter: blur(5px);
 }
 
+body.dark header {
+  background: #112143 !important;
+}
+
 header .logo {
   text-decoration: none;
 }
@@ -21,6 +25,10 @@ header .logo span {
   font-weight: 800;
   font-size: 24px;
 }
+body.dark header .logo span {
+  color: #fff !important;
+  opacity: 0.9;
+}
 
 header button.rounded-circle {
   min-width: 40px !important;
@@ -30,10 +38,18 @@ header button.rounded-circle {
   color: #0858f7;
 }
 
+body.dark header button.rounded-circle {
+  background: #112755 !important;
+}
+
 header button.rounded-circle svg {
   color: #292929;
   font-size: 18px !important;
   transition: all 0.2s ease-in-out;
+}
+
+body.dark header button.rounded-circle svg {
+  color: #fff !important;
 }
 
 header button.rounded-circle:hover svg {
@@ -94,6 +110,19 @@ header .part2 {
   color: #000;
   opacity: 0.7;
 }
+
+body.dark .myAcc .userInfo * {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+body.dark .MuiPaper-elevation {
+  background-color: #12254e !important;
+}
+body.dark .MuiPaper-elevation li *,
+body.dark .MuiPaper-elevation li {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
 #account-menu .MuiPaper-elevation {
   top: 70px !important;
 }
@@ -137,6 +166,15 @@ header .part2 {
 .dropDown_List .head h4 {
   font-size: 17px;
   font-weight: 600;
+}
+
+body.dark .dropDown_List .head h4 {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+body.dark .dropDown_List li.MuiButtonBase-root {
+  background-color: #12254e !important;
+  background: #12254e !important;
 }
 .dropDown_List li.MuiButtonBase-root {
   background: #ebf6ff !important;

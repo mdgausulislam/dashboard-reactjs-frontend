@@ -1,0 +1,42 @@
+.signUpSection {
+  background: #f1f1f1;
+  padding: 0px 0px;
+  height: auto !important;
+}
+
+.signUpSection .loginBox {
+  background: #e4e4e4 !important;
+  position: relative;
+  z-index: 100;
+  width: 100% !important;
+  padding: 25px 5px !important;
+}
+
+.signUpSection .loginBox .wrapper {
+  border: 0px !important;
+  background: transparent !important;
+  padding-top: 20px !important;
+}
+
+.signUpSection .part1 {
+  padding-left: 100px;
+  padding-right: 200px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: #403e57 !important;
+}
+
+.signUpSection .part1 h1 {
+  font-size: 40px;
+  font-weight: 800;
+}
+.signUpSection .part1 p {
+  font-size: 18px;
+  font-weight: 500;
+}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './DashBoard.css'
 import DashboardBox from './DashboardBox/DashboardBox';
 import { FaEye, FaPencilAlt, FaUserCircle } from 'react-icons/fa';
@@ -13,6 +13,9 @@ import { AreaChart, Area, CartesianGrid, Tooltip, ResponsiveContainer } from 're
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Pagination from '@mui/material/Pagination';
+import { MyContext } from '../../App';
+import Rating from '@mui/material/Rating';
+import { Link } from 'react-router-dom';
 
 const data = [
     {
@@ -65,6 +68,7 @@ const DashBoard = () => {
     const [categoryBy, setCategoryBy] = useState('');
     const [brandBy, setBrandBy] = useState('');
     const [searchBy, setSearchBy] = useState('');
+    const context = useContext(MyContext);
 
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -73,9 +77,13 @@ const DashBoard = () => {
     const handleClose = () => {
         setAnchorEl(null);
     };
-
-
     const ITEM_HEIGHT = 48;
+
+    useEffect(() => {
+        context.setisHiddenSidebarAndHeader(false)
+        window.scrollTo(0, 0);
+    }, [])
+
     return (
         <>
             <section className="right-content w-100">
@@ -242,26 +250,21 @@ const DashBoard = () => {
                                     <th>Category</th>
                                     <th>Brand</th>
                                     <th>Price</th>
-                                    <th>Srock</th>
+                                    <th>Stock</th>
                                     <th>Rating</th>
                                     <th>Order</th>
                                     <th>Sales</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody className='mc-table-body'>
                                 <tr>
-                                    <td>#1</td>
+                                    <td className='font-weight-bold'>#1</td>
                                     <td>
-                                        <div className="d-flex align-items-center productBox">
-
-                                            <div className="imgWrapper">
-                                                <div className="img">
-                                                    <img src="https://mironcoder-hotash.netlify.app/images/product/01.webp" alt="" className='w-100' />
-                                                </div>
-                                            </div>
-                                            <div className="ProductInfo">
-                                                <h6>Tops and skirt set for Female...</h6>
+                                        <div className="mc-table-product md">
+                                            <img src="https://mironcoder-hotash.netlify.app/images/product/01.webp" alt="" />
+                                            <div className="mc-table-group">
+                                                <h6>Tops and skirt set for Female</h6>
                                                 <p>Women's exclusive summer Tops and skirt set for Female Tops and skirt set</p>
                                             </div>
                                         </div>
@@ -274,29 +277,32 @@ const DashBoard = () => {
                                         <span className='new text-danger'>$19.00</span>
                                     </td>
                                     <td>30</td>
-                                    <td>4.9(16)</td>
+                                    <td>
+                                        <div className='d-flex align-items-center justify-content-center ratings'>
+                                            <Rating name="read-only" value={4.9} max={1} readOnly size="small" />
+                                            <b>4.9</b>(16)
+                                        </div>
+                                    </td>
+
                                     <td>380</td>
                                     <td>$38k</td>
                                     <td>
                                         <div className="actions d-flex align-items-center">
-                                            <Button className='secondary' color="secondary"> <FaEye /></Button>
+                                            <Link to='/products/details'>
+                                                <Button className='secondary' color="secondary"> <FaEye /></Button>
+                                            </Link>
                                             <Button className='success' color="success"> <FaPencilAlt /></Button>
                                             <Button className='error' color="error"> <MdDelete /></Button>
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>#1</td>
+                                    <td className='font-weight-bold'>#1</td>
                                     <td>
-                                        <div className="d-flex align-items-center productBox">
-
-                                            <div className="imgWrapper">
-                                                <div className="img">
-                                                    <img src="https://mironcoder-hotash.netlify.app/images/product/01.webp" alt="" className='w-100' />
-                                                </div>
-                                            </div>
-                                            <div className="ProductInfo">
-                                                <h6>Tops and skirt set for Female...</h6>
+                                        <div className="mc-table-product md">
+                                            <img src="https://mironcoder-hotash.netlify.app/images/product/01.webp" alt="" />
+                                            <div className="mc-table-group">
+                                                <h6>Tops and skirt set for Female</h6>
                                                 <p>Women's exclusive summer Tops and skirt set for Female Tops and skirt set</p>
                                             </div>
                                         </div>
@@ -309,29 +315,32 @@ const DashBoard = () => {
                                         <span className='new text-danger'>$19.00</span>
                                     </td>
                                     <td>30</td>
-                                    <td>4.9(16)</td>
+                                    <td>
+                                        <div className='d-flex align-items-center justify-content-center ratings'>
+                                            <Rating name="read-only" value={4.9} max={1} readOnly size="small" />
+                                            <b>4.9</b>(16)
+                                        </div>
+                                    </td>
+
                                     <td>380</td>
                                     <td>$38k</td>
                                     <td>
                                         <div className="actions d-flex align-items-center">
-                                            <Button className='secondary' color="secondary"> <FaEye /></Button>
+                                            <Link to='/products/details'>
+                                                <Button className='secondary' color="secondary"> <FaEye /></Button>
+                                            </Link>
                                             <Button className='success' color="success"> <FaPencilAlt /></Button>
                                             <Button className='error' color="error"> <MdDelete /></Button>
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>#1</td>
+                                    <td className='font-weight-bold'>#1</td>
                                     <td>
-                                        <div className="d-flex align-items-center productBox">
-
-                                            <div className="imgWrapper">
-                                                <div className="img">
-                                                    <img src="https://mironcoder-hotash.netlify.app/images/product/01.webp" alt="" className='w-100' />
-                                                </div>
-                                            </div>
-                                            <div className="ProductInfo">
-                                                <h6>Tops and skirt set for Female...</h6>
+                                        <div className="mc-table-product md">
+                                            <img src="https://mironcoder-hotash.netlify.app/images/product/01.webp" alt="" />
+                                            <div className="mc-table-group">
+                                                <h6>Tops and skirt set for Female</h6>
                                                 <p>Women's exclusive summer Tops and skirt set for Female Tops and skirt set</p>
                                             </div>
                                         </div>
@@ -344,29 +353,32 @@ const DashBoard = () => {
                                         <span className='new text-danger'>$19.00</span>
                                     </td>
                                     <td>30</td>
-                                    <td>4.9(16)</td>
+                                    <td>
+                                        <div className='d-flex align-items-center justify-content-center ratings'>
+                                            <Rating name="read-only" value={4.9} max={1} readOnly size="small" />
+                                            <b>4.9</b>(16)
+                                        </div>
+                                    </td>
+
                                     <td>380</td>
                                     <td>$38k</td>
                                     <td>
                                         <div className="actions d-flex align-items-center">
-                                            <Button className='secondary' color="secondary"> <FaEye /></Button>
+                                            <Link to='/products/details'>
+                                                <Button className='secondary' color="secondary"> <FaEye /></Button>
+                                            </Link>
                                             <Button className='success' color="success"> <FaPencilAlt /></Button>
                                             <Button className='error' color="error"> <MdDelete /></Button>
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>#1</td>
+                                    <td className='font-weight-bold'>#1</td>
                                     <td>
-                                        <div className="d-flex align-items-center productBox">
-
-                                            <div className="imgWrapper">
-                                                <div className="img">
-                                                    <img src="https://mironcoder-hotash.netlify.app/images/product/01.webp" alt="" className='w-100' />
-                                                </div>
-                                            </div>
-                                            <div className="ProductInfo">
-                                                <h6>Tops and skirt set for Female...</h6>
+                                        <div className="mc-table-product md">
+                                            <img src="https://mironcoder-hotash.netlify.app/images/product/01.webp" alt="" />
+                                            <div className="mc-table-group">
+                                                <h6>Tops and skirt set for Female</h6>
                                                 <p>Women's exclusive summer Tops and skirt set for Female Tops and skirt set</p>
                                             </div>
                                         </div>
@@ -379,29 +391,32 @@ const DashBoard = () => {
                                         <span className='new text-danger'>$19.00</span>
                                     </td>
                                     <td>30</td>
-                                    <td>4.9(16)</td>
+                                    <td>
+                                        <div className='d-flex align-items-center justify-content-center ratings'>
+                                            <Rating name="read-only" value={4.9} max={1} readOnly size="small" />
+                                            <b>4.9</b>(16)
+                                        </div>
+                                    </td>
+
                                     <td>380</td>
                                     <td>$38k</td>
                                     <td>
                                         <div className="actions d-flex align-items-center">
-                                            <Button className='secondary' color="secondary"> <FaEye /></Button>
+                                            <Link to='/products/details'>
+                                                <Button className='secondary' color="secondary"> <FaEye /></Button>
+                                            </Link>
                                             <Button className='success' color="success"> <FaPencilAlt /></Button>
                                             <Button className='error' color="error"> <MdDelete /></Button>
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>#1</td>
+                                    <td className='font-weight-bold'>#1</td>
                                     <td>
-                                        <div className="d-flex align-items-center productBox">
-
-                                            <div className="imgWrapper">
-                                                <div className="img">
-                                                    <img src="https://mironcoder-hotash.netlify.app/images/product/01.webp" alt="" className='w-100' />
-                                                </div>
-                                            </div>
-                                            <div className="ProductInfo">
-                                                <h6>Tops and skirt set for Female...</h6>
+                                        <div className="mc-table-product md">
+                                            <img src="https://mironcoder-hotash.netlify.app/images/product/01.webp" alt="" />
+                                            <div className="mc-table-group">
+                                                <h6>Tops and skirt set for Female</h6>
                                                 <p>Women's exclusive summer Tops and skirt set for Female Tops and skirt set</p>
                                             </div>
                                         </div>
@@ -414,12 +429,210 @@ const DashBoard = () => {
                                         <span className='new text-danger'>$19.00</span>
                                     </td>
                                     <td>30</td>
-                                    <td>4.9(16)</td>
+                                    <td>
+                                        <div className='d-flex align-items-center justify-content-center ratings'>
+                                            <Rating name="read-only" value={4.9} max={1} readOnly size="small" />
+                                            <b>4.9</b>(16)
+                                        </div>
+                                    </td>
+
                                     <td>380</td>
                                     <td>$38k</td>
                                     <td>
                                         <div className="actions d-flex align-items-center">
-                                            <Button className='secondary' color="secondary"> <FaEye /></Button>
+                                            <Link to='/products/details'>
+                                                <Button className='secondary' color="secondary"> <FaEye /></Button>
+                                            </Link>
+                                            <Button className='success' color="success"> <FaPencilAlt /></Button>
+                                            <Button className='error' color="error"> <MdDelete /></Button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td className='font-weight-bold'>#1</td>
+                                    <td>
+                                        <div className="mc-table-product md">
+                                            <img src="https://mironcoder-hotash.netlify.app/images/product/01.webp" alt="" />
+                                            <div className="mc-table-group">
+                                                <h6>Tops and skirt set for Female</h6>
+                                                <p>Women's exclusive summer Tops and skirt set for Female Tops and skirt set</p>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                    <td>womans</td>
+                                    <td>richman</td>
+                                    <td>
+                                        <del className='old'>$19.00</del>
+                                        <span className='new text-danger'>$19.00</span>
+                                    </td>
+                                    <td>30</td>
+                                    <td>
+                                        <div className='d-flex align-items-center justify-content-center ratings'>
+                                            <Rating name="read-only" value={4.9} max={1} readOnly size="small" />
+                                            <b>4.9</b>(16)
+                                        </div>
+                                    </td>
+
+                                    <td>380</td>
+                                    <td>$38k</td>
+                                    <td>
+                                        <div className="actions d-flex align-items-center">
+                                            <Link to='/products/details'>
+                                                <Button className='secondary' color="secondary"> <FaEye /></Button>
+                                            </Link>
+                                            <Button className='success' color="success"> <FaPencilAlt /></Button>
+                                            <Button className='error' color="error"> <MdDelete /></Button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td className='font-weight-bold'>#1</td>
+                                    <td>
+                                        <div className="mc-table-product md">
+                                            <img src="https://mironcoder-hotash.netlify.app/images/product/01.webp" alt="" />
+                                            <div className="mc-table-group">
+                                                <h6>Tops and skirt set for Female</h6>
+                                                <p>Women's exclusive summer Tops and skirt set for Female Tops and skirt set</p>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                    <td>womans</td>
+                                    <td>richman</td>
+                                    <td>
+                                        <del className='old'>$19.00</del>
+                                        <span className='new text-danger'>$19.00</span>
+                                    </td>
+                                    <td>30</td>
+                                    <td>
+                                        <div className='d-flex align-items-center justify-content-center ratings'>
+                                            <Rating name="read-only" value={4.9} max={1} readOnly size="small" />
+                                            <b>4.9</b>(16)
+                                        </div>
+                                    </td>
+
+                                    <td>380</td>
+                                    <td>$38k</td>
+                                    <td>
+                                        <div className="actions d-flex align-items-center">
+                                            <Link to='/products/details'>
+                                                <Button className='secondary' color="secondary"> <FaEye /></Button>
+                                            </Link>
+                                            <Button className='success' color="success"> <FaPencilAlt /></Button>
+                                            <Button className='error' color="error"> <MdDelete /></Button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td className='font-weight-bold'>#1</td>
+                                    <td>
+                                        <div className="mc-table-product md">
+                                            <img src="https://mironcoder-hotash.netlify.app/images/product/01.webp" alt="" />
+                                            <div className="mc-table-group">
+                                                <h6>Tops and skirt set for Female</h6>
+                                                <p>Women's exclusive summer Tops and skirt set for Female Tops and skirt set</p>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                    <td>womans</td>
+                                    <td>richman</td>
+                                    <td>
+                                        <del className='old'>$19.00</del>
+                                        <span className='new text-danger'>$19.00</span>
+                                    </td>
+                                    <td>30</td>
+                                    <td>
+                                        <div className='d-flex align-items-center justify-content-center ratings'>
+                                            <Rating name="read-only" value={4.9} max={1} readOnly size="small" />
+                                            <b>4.9</b>(16)
+                                        </div>
+                                    </td>
+
+                                    <td>380</td>
+                                    <td>$38k</td>
+                                    <td>
+                                        <div className="actions d-flex align-items-center">
+                                            <Link to='/products/details'>
+                                                <Button className='secondary' color="secondary"> <FaEye /></Button>
+                                            </Link>
+                                            <Button className='success' color="success"> <FaPencilAlt /></Button>
+                                            <Button className='error' color="error"> <MdDelete /></Button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td className='font-weight-bold'>#1</td>
+                                    <td>
+                                        <div className="mc-table-product md">
+                                            <img src="https://mironcoder-hotash.netlify.app/images/product/01.webp" alt="" />
+                                            <div className="mc-table-group">
+                                                <h6>Tops and skirt set for Female</h6>
+                                                <p>Women's exclusive summer Tops and skirt set for Female Tops and skirt set</p>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                    <td>womans</td>
+                                    <td>richman</td>
+                                    <td>
+                                        <del className='old'>$19.00</del>
+                                        <span className='new text-danger'>$19.00</span>
+                                    </td>
+                                    <td>30</td>
+                                    <td>
+                                        <div className='d-flex align-items-center justify-content-center ratings'>
+                                            <Rating name="read-only" value={4.9} max={1} readOnly size="small" />
+                                            <b>4.9</b>(16)
+                                        </div>
+                                    </td>
+
+                                    <td>380</td>
+                                    <td>$38k</td>
+                                    <td>
+                                        <div className="actions d-flex align-items-center">
+                                            <Link to='/products/details'>
+                                                <Button className='secondary' color="secondary"> <FaEye /></Button>
+                                            </Link>
+                                            <Button className='success' color="success"> <FaPencilAlt /></Button>
+                                            <Button className='error' color="error"> <MdDelete /></Button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td className='font-weight-bold'>#1</td>
+                                    <td>
+                                        <div className="mc-table-product md">
+                                            <img src="https://mironcoder-hotash.netlify.app/images/product/01.webp" alt="" />
+                                            <div className="mc-table-group">
+                                                <h6>Tops and skirt set for Female</h6>
+                                                <p>Women's exclusive summer Tops and skirt set for Female Tops and skirt set</p>
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                    <td>womans</td>
+                                    <td>richman</td>
+                                    <td>
+                                        <del className='old'>$19.00</del>
+                                        <span className='new text-danger'>$19.00</span>
+                                    </td>
+                                    <td>30</td>
+                                    <td>
+                                        <div className='d-flex align-items-center justify-content-center ratings'>
+                                            <Rating name="read-only" value={4.9} max={1} readOnly size="small" />
+                                            <b>4.9</b>(16)
+                                        </div>
+                                    </td>
+
+                                    <td>380</td>
+                                    <td>$38k</td>
+                                    <td>
+                                        <div className="actions d-flex align-items-center">
+                                            <Link to='/products/details'>
+                                                <Button className='secondary' color="secondary"> <FaEye /></Button>
+                                            </Link>
                                             <Button className='success' color="success"> <FaPencilAlt /></Button>
                                             <Button className='error' color="error"> <MdDelete /></Button>
                                         </div>
@@ -439,15 +652,3 @@ const DashBoard = () => {
 };
 
 export default DashBoard;
-
-{/* <div className="action d-flex align-items-center">
-    <Button>
-        <FaEye />
-    </Button>
-    <Button color=''>
-        <FaPencilAlt />
-    </Button>
-    <Button>
-        <MdDelete />
-    </Button>
-</div> */}

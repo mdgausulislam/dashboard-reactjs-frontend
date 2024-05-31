@@ -127,11 +127,23 @@
   color: #403e57;
 }
 
+body.dark .card {
+  background: #112143 !important;
+}
+
+body.dark .card .hd {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
 .cardFilters .col-md-3 h4 {
   font-size: 14px !important;
   font-weight: 700 !important;
   text-transform: capitalize;
   color: #403e57;
+}
+
+body.dark .cardFilters .col-md-3 h4 {
+  color: rgba(255, 255, 255, 0.8) !important;
 }
 
 h1,
@@ -142,6 +154,34 @@ h5,
 h6,
 p {
   color: #403e57;
+}
+
+body.dark .css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root,
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4,
+body.dark h5,
+body.dark h6,
+body.dark p,
+body.dark span,
+body.dark .css-hfutr2-MuiSvgIcon-root-MuiSelect-icon,
+body.dark .css-bpeome-MuiSvgIcon-root-MuiSelect-icon {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+body.dark .css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
+  background-color: #1b2b4d !important;
+}
+
+body.dark .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+  border: 1px solid #253557 !important;
+  border-radius: 8px !important;
+}
+
+body.dark
+  .css-jedpe8-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+  color: #b4b4b4 !important;
 }
 
 .table .thead-dark th {
@@ -156,6 +196,15 @@ p {
   font-weight: 500;
 }
 
+body.dark table td {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+body.dark .table-bordered td,
+body.dark .table-bordered th {
+  border: 1px solid #1b2b4d !important;
+}
+
 .actions button {
   min-width: 32px !important;
   width: 32px !important;
@@ -165,14 +214,29 @@ p {
 .actions button.secondary {
   background: rgba(203, 60, 231, 0.2) !important;
 }
+
+body.dark .actions button.secondary {
+  background: #de2fff !important;
+}
+
 .actions button.success {
   background: rgba(26, 59, 183, 0.2) !important;
 }
+body.dark .actions button.success {
+  background: #27bf68 !important;
+}
+
 .actions button.error {
   background: rgba(241, 17, 51, 0.2) !important;
 }
+body.dark .actions button.error {
+  background: #ff304f !important;
+}
 .actions button svg {
   font-size: 32px !important;
+}
+body.dark .actions button svg {
+  color: #fff !important;
 }
 
 .v-align td {
@@ -184,14 +248,70 @@ p {
   display: block;
   width: 100%;
 }
-table td .imgWrapper {
-  width: 35%;
-  flex: 0 0 35%;
+
+.new {
+  font-weight: bold;
 }
 
-table td .ProductInfo {
-  width: 65%;
-  flex: 0 0 65%;
+img {
+  vertical-align: middle;
+}
+.mc-table-product {
+  align-items: center;
+  display: flex;
+  gap: 0 8px;
+  justify-content: flex-start;
+}
+
+.mc-table-product.md img {
+  height: 40px;
+  width: 40px;
+}
+
+.mc-table-product img {
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+  box-shadow: 0 7px 15px 0 rgb(0 0 0 / 6%);
+  flex-shrink: 0;
+  height: 45px;
+  object-fit: cover;
+  width: 45px;
+}
+
+.mc-table-product h6,
+.mc-table-product p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.mc-table-product p {
+  font-size: 13px;
+  line-height: 18px;
+  margin-bottom: 0px !important;
+}
+
+.mc-table-product h6 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.mc-table-group {
+  min-width: 70px !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+table tr td:nth-child(2),
+table tr th:nth-child(2) {
+  max-width: 180px !important;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+}
+.mc-table-body tr td {
+  max-width: 120px !important;
 }
 
 table td .ProductInfo h6 {
@@ -231,5 +351,20 @@ table.v-align td .productBox {
 }
 
 .css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
-  background-color: #2a6ff7 !important;
+  background-color: #0858f7 !important;
+}
+.css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root:hover {
+  background-color: #0858f7 !important;
+  color: #fff !important;
+}
+body.dark .css-1to7aaw-MuiButtonBase-root-MuiPaginationItem-root {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.ratings b {
+  font-weight: bold !important;
+  padding: 0px 2px;
+}
+body.dark .ratings b {
+  color: #fff !important;
 }

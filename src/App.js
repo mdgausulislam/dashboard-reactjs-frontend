@@ -1,11 +1,13 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import DashBoard from './Pages/DashBoard/DashBoard';
 import Header from './Components/Header/Header';
 import Sidebar from './Components/Sidebar/Sidebar';
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import Login from './Pages/Login/Login';
+import SignUp from './Pages/SignUp/SignUp';
+import ProductDetails from './Pages/ProductDetails/ProductDetails';
 
 
 const MyContext = createContext();
@@ -15,6 +17,22 @@ function App() {
   const [isToggleSidebar, setisToggleSidebar] = useState(false)
   const [isLogin, setisLogin] = useState(false);
   const [isHiddenSidebarAndHeader, setisHiddenSidebarAndHeader] = useState(false);
+  const [themeMode, setThemeMode] = useState(true);
+
+  useEffect(() => {
+
+    if (themeMode === true) {
+      document.body.classList.remove("dark")
+      document.body.classList.add('light')
+      localStorage.setItem('themeMode', 'light')
+    }
+    else {
+      document.body.classList.remove("light")
+      document.body.classList.add('dark')
+      localStorage.setItem('themeMode', "dark")
+    }
+
+  }, [themeMode])
 
   const values = {
     isToggleSidebar,
@@ -23,7 +41,8 @@ function App() {
     setisLogin,
     isHiddenSidebarAndHeader,
     setisHiddenSidebarAndHeader,
-
+    themeMode,
+    setThemeMode
   }
 
   return (
@@ -47,6 +66,8 @@ function App() {
               <Route path="/" exact={true} element={<DashBoard />} />
               <Route path="/dashboard" exact={true} element={<DashBoard />} />
               <Route path="/login" exact={true} element={<Login />} />
+              <Route path="/signUp" exact={true} element={<SignUp />} />
+              <Route path="/products/details" exact={true} element={<ProductDetails />} />
             </Routes>
           </div>
         </div>

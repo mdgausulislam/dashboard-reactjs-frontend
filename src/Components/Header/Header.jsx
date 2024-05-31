@@ -62,7 +62,7 @@ const Header = () => {
                             <SearchBox />
                         </div>
                         <div className="col-sm-7 d-flex align-items-center justify-content-end part3">
-                            <Button className='rounded-circle mr-3'>
+                            <Button className='rounded-circle mr-3' onClick={() => context.setThemeMode(!context.themeMode)}>
                                 <MdOutlineLightMode />
                             </Button>
                             <Button className='rounded-circle mr-3'>
@@ -258,7 +258,7 @@ const Header = () => {
                             </div>
 
                             {
-                               context.isLogin !== true ? <Link to='/login'>
+                                context.isLogin !== true ? <Link to='/login'>
                                     <Button className='btn-blue btn-lg btn-rounded'>SignIn</Button>
                                 </Link> :
                                     <div className="myAccWrapper">

@@ -1,0 +1,90 @@
+.breadcrumbs_ a:hover {
+  text-decoration: none !important;
+}
+
+body.dark .breadcrumbs_ a {
+  background-color: #112143 !important;
+}
+body.dark .breadcrumbs_ a * {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+body.dark .breadcrumbs_ li .MuiChip-filled {
+  background-color: #112143 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+body.dark .css-1wuw8dw-MuiBreadcrumbs-separator {
+  background-color: #112143 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.slick-slide {
+  outline: none;
+}
+
+.sliderSmall .slick-slide {
+  padding-right: 10px !important;
+}
+
+.sliderSmall .slick-slide .item {
+  border-radius: 7px;
+  overflow: hidden;
+}
+.sliderSmall *,
+.sliderBig * {
+  transition: all 0.2s !important;
+}
+.sliderBig .item {
+  overflow: hidden;
+  border-radius: 7px;
+}
+.productDetailsSection .productInfo .icon {
+  width: 28%;
+  flex: 0 0 28%;
+}
+.productDetailsSection .productInfo .icon svg {
+  font-size: 22px;
+}
+.productDetailsSection .productInfo .name {
+  width: 72%;
+  flex: 0 0 72%;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.productDetailsSection .productInfo .row {
+  margin-bottom: 10px !important;
+}
+.productDetailsSection .productInfo .row .col-sm-9 {
+  display: flex;
+  align-items: center;
+}
+.productDetailsSection .productInfo .row .col-sm-9 span {
+  opacity: 0.8;
+  font-size: 15px;
+  padding-left: 20px;
+}
+
+body.dark .col-sm-9 {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.tags {
+  margin-bottom: 0px !important;
+}
+
+body.dark .tags li span {
+  background: #1b2b4d !important;
+}
+
+.tags li span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px !important;
+  font-size: 13px !important;
+  padding: 5px 10px !important;
+}
+
+.tags li span:first-child {
+  padding-left: 0px !important;
+}
