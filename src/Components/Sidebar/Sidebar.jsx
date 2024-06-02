@@ -12,7 +12,7 @@ const Sidebar = () => {
 
     const [activeTab, setActiveTab] = useState(0);
     const [isToggleSubMenu, setisToggleSubMenu] = useState(false)
-    
+
     const context = useContext(MyContext)
 
     const isOpenSubMenu = (index) => {
@@ -33,9 +33,9 @@ const Sidebar = () => {
                             </Button>
                             <div className={`subMenuWrapper ${activeTab === 0 && isToggleSubMenu === true ? 'colapse' : 'colapsed'}`}>
                                 <ul className="subMenu">
-                                    <li><Link to='#'>Product List</Link></li>
-                                    <li><Link to='#'>Product View</Link></li>
-                                    <li><Link to='#'>Product Upload</Link></li>
+                                    <li><Link to='products'>Product List</Link></li>
+                                    <li><Link to='/products/details'>Product View</Link></li>
+                                    <li><Link to='/products/uploads'>Product Upload</Link></li>
                                 </ul>
                             </div>
                         </Link>
@@ -48,9 +48,9 @@ const Sidebar = () => {
                         </Button>
                         <div className={`subMenuWrapper ${activeTab === 1 && isToggleSubMenu === true ? 'colapse' : 'colapsed'}`}>
                             <ul className="subMenu">
-                                <li><Link to='#'>Product List</Link></li>
-                                <li><Link to='#'>Product View</Link></li>
-                                <li><Link to='#'>Product Upload</Link></li>
+                                <li><Link to='products'>Product List</Link></li>
+                                <li><Link to='/products/details'>Product View</Link></li>
+                                <li><Link to='/products/uploads'>Product Upload</Link></li>
                             </ul>
                         </div>
                     </li>

@@ -17,6 +17,7 @@ import Logout from '@mui/icons-material/Logout';
 import { FaShieldHalved } from 'react-icons/fa6';
 import { MyContext } from '../../App';
 import UserAvatar from '../../Pages/UserAvatar/UserAvatar';
+import { MdDarkMode } from "react-icons/md";
 
 const Header = () => {
     const [anchorEl, setAnchorEl] = useState(null);
@@ -41,6 +42,10 @@ const Header = () => {
         setisOpenNotificationDrop(false)
     };
 
+    const handleThemeToggle = () => {
+        context.setThemeMode(!context.themeMode);
+    };
+
     return (
         <>
             <header className='d-flex align-items-center'>
@@ -63,8 +68,11 @@ const Header = () => {
                             <SearchBox />
                         </div>
                         <div className="col-sm-7 d-flex align-items-center justify-content-end part3">
-                            <Button className='rounded-circle mr-3' onClick={() => context.setThemeMode(!context.themeMode)}>
-                                <MdOutlineLightMode />
+                            <Button className='rounded-circle mr-3' onClick={handleThemeToggle}>
+                                {
+                                    context.themeMode ? <MdOutlineLightMode /> : <MdDarkMode />
+                                }
+
                             </Button>
                             <Button className='rounded-circle mr-3'>
                                 <Badge badgeContent={4} color="primary">

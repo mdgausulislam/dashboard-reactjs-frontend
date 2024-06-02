@@ -5,12 +5,16 @@ import Chip from '@mui/material/Chip';
 import HomeIcon from '@mui/icons-material/Home';
 import Slider from "react-slick";
 import './ProductDetails.css'
-import { MdBrandingWatermark } from 'react-icons/md';
+import { MdBrandingWatermark, MdReviews } from 'react-icons/md';
 import { BiSolidCategoryAlt } from 'react-icons/bi';
 import UserAvatar from '../UserAvatar/UserAvatar';
 import Rating from '@mui/material/Rating';
 import { Button } from '@mui/material';
 import { FaReply } from 'react-icons/fa';
+import { RiSettings4Fill } from 'react-icons/ri';
+import { IoIosPricetags, IoMdColorPalette } from 'react-icons/io';
+import { FaCartShopping, FaFileZipper } from 'react-icons/fa6';
+import { GrValidate } from 'react-icons/gr';
 
 
 //bredcrumb
@@ -157,7 +161,7 @@ const ProductDetails = () => {
                                     </div>
                                     <div className="row">
                                         <div className="col-sm-3 d-flex align-items-center">
-                                            <span className="icon"><BiSolidCategoryAlt /></span>
+                                            <span className="icon"><RiSettings4Fill /></span>
                                             <span className="name">Tags</span>
                                         </div>
                                         <div className="col-sm-9">
@@ -187,7 +191,7 @@ const ProductDetails = () => {
                                     </div>
                                     <div className="row">
                                         <div className="col-sm-3 d-flex align-items-center">
-                                            <span className="icon"><BiSolidCategoryAlt /></span>
+                                            <span className="icon"><IoMdColorPalette /></span>
                                             <span className="name">Color</span>
                                         </div>
                                         <div className="col-sm-9">
@@ -214,7 +218,7 @@ const ProductDetails = () => {
                                     </div>
                                     <div className="row">
                                         <div className="col-sm-3 d-flex align-items-center">
-                                            <span className="icon"><BiSolidCategoryAlt /></span>
+                                            <span className="icon"><FaFileZipper  /></span>
                                             <span className="name">Size</span>
                                         </div>
                                         <div className="col-sm-9">
@@ -241,7 +245,7 @@ const ProductDetails = () => {
                                     </div>
                                     <div className="row">
                                         <div className="col-sm-3 d-flex align-items-center">
-                                            <span className="icon"><BiSolidCategoryAlt /></span>
+                                            <span className="icon"><IoIosPricetags /></span>
                                             <span className="name">Price</span>
                                         </div>
                                         <div className="col-sm-9">
@@ -255,7 +259,7 @@ const ProductDetails = () => {
                                     </div>
                                     <div className="row">
                                         <div className="col-sm-3 d-flex align-items-center">
-                                            <span className="icon"><BiSolidCategoryAlt /></span>
+                                            <span className="icon"><FaCartShopping  /></span>
                                             <span className="name">Stock</span>
                                         </div>
                                         <div className="col-sm-9">
@@ -264,7 +268,7 @@ const ProductDetails = () => {
                                     </div>
                                     <div className="row">
                                         <div className="col-sm-3 d-flex align-items-center">
-                                            <span className="icon"><BiSolidCategoryAlt /></span>
+                                            <span className="icon"><MdReviews /></span>
                                             <span className="name">Review</span>
                                         </div>
                                         <div className="col-sm-9">
@@ -273,7 +277,7 @@ const ProductDetails = () => {
                                     </div>
                                     <div className="row">
                                         <div className="col-sm-3 d-flex align-items-center">
-                                            <span className="icon"><BiSolidCategoryAlt /></span>
+                                            <span className="icon"><GrValidate  /></span>
                                             <span className="name">Published</span>
                                         </div>
                                         <div className="col-sm-9">

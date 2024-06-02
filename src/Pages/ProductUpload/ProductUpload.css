@@ -1,0 +1,31 @@
+.form .form-group {
+  margin-bottom: 25px !important;
+}
+
+.form .form-group h6 {
+  margin-bottom: 10px !important;
+  font-size: 14px !important;
+}
+.form .form-group input,
+.form .form-group textarea {
+  background: #fafafa !important;
+  outline: none;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  height: 40px;
+  padding-left: 15px !important;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.form .form-group textarea {
+  height: 120px;
+  padding-top: 15px;
+}
+
+body.dark .form .form-group input,
+body.dark .form .form-group textarea {
+  background: #1b2b4d !important;
+  border: 1px solid #253557 !important;
+  color: #b4b4b4 !important;
+}

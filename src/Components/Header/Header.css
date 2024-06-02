@@ -202,3 +202,7 @@ body.dark .dropDown_List li.MuiButtonBase-root {
   top: -10px !important;
   right: -5px !important;
 }
+
+body.dark .part3{
+  opacity: 0.7;
+}

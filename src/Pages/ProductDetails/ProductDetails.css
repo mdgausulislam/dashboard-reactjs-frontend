@@ -124,6 +124,10 @@ body.light .tags li span:first-child {
   padding-left: 0px !important;
 }
 
+.tags span:first-child {
+  padding-left: 0px !important;
+}
+
 .ratingSection {
   width: 100%;
   padding-left: 150px;
