@@ -1,0 +1,87 @@
+.mc-float-card.blue {
+  background: linear-gradient(#64b3f6, #2b77e5);
+}
+
+.mc-float-card.lg {
+  padding: 16px;
+}
+
+.mc-float-card {
+  border-radius: 8px;
+  filter: drop-shadow(0 7px 12px rgba(0, 0, 0, 0.1));
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.mc-float-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+}
+.mc-float-card.lg h3 {
+  font-size: 26px;
+  margin-bottom: 8px;
+}
+.mc-float-card.lg p {
+  font-size: 16px;
+}
+
+.mc-float-card h3,
+.mc-float-card p {
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.mc-float-card.blue span {
+  color: #96cefa;
+}
+
+.mc-float-card span {
+  filter: drop-shadow(3px 5px 0 rgba(0, 0, 0, 0.07));
+  font-size: 50px;
+}
+
+.icons-bag,
+.icons-widgets,
+.icons-verified {
+  word-wrap: normal;
+  direction: ltr;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  text-transform: none;
+  white-space: nowrap;
+}
+
+.icons-bag,
+.icons-widgets,
+.icons-verified {
+  display: inline-block;
+  font-family: Material Icons;
+  font-size: 24px;
+  letter-spacing: normal;
+}
+
+.mc-float-card .icons-bag,
+.mc-float-card .icons-widgets,
+.mc-float-card .icons-verified {
+  position: absolute;
+  right: 5px;
+  top: -18px;
+  z-index: 1;
+}
+
+.mc-float-card.green {
+  background: linear-gradient(#4eda89, #1a9f53);
+}
+
+.mc-float-card.green span {
+  color: #89ecb3;
+}
+
+.mc-float-card.purple {
+  background: linear-gradient(#ed68ff, #be0ee1);
+}
+
+.mc-float-card.purple span {
+  color: #f3a0ff;
+}

@@ -1,8 +1,4 @@
 import React, { useRef } from 'react';
-import { emphasize, styled } from '@mui/material/styles';
-import Breadcrumbs from '@mui/material/Breadcrumbs';
-import Chip from '@mui/material/Chip';
-import HomeIcon from '@mui/icons-material/Home';
 import Slider from "react-slick";
 import './ProductDetails.css'
 import { MdBrandingWatermark, MdReviews } from 'react-icons/md';
@@ -15,30 +11,13 @@ import { RiSettings4Fill } from 'react-icons/ri';
 import { IoIosPricetags, IoMdColorPalette } from 'react-icons/io';
 import { FaCartShopping, FaFileZipper } from 'react-icons/fa6';
 import { GrValidate } from 'react-icons/gr';
+import BreadCrumbs from '../../Components/BreadCrumbs/BreadCrumbs';
 
-
-//bredcrumb
-
-const StyledBreadcrumb = styled(Chip)(({ theme }) => {
-    const backgroundColor =
-        theme.palette.mode === 'light'
-            ? theme.palette.grey[100]
-            : theme.palette.grey[800];
-    return {
-        backgroundColor,
-        height: theme.spacing(3),
-        color: theme.palette.text.primary,
-        fontWeight: theme.typography.fontWeightRegular,
-        '&:hover, &:focus': {
-            backgroundColor: emphasize(backgroundColor, 0.06),
-        },
-        '&:active': {
-            boxShadow: theme.shadows[1],
-            backgroundColor: emphasize(backgroundColor, 0.12),
-        },
-    };
-});
-
+const breadcrumbData = [
+    { label: 'DashBoard', href: '#', icon: true },
+    { label: 'Products', href: '#' },
+    { label: 'Products List' },
+];
 
 const ProductDetails = () => {
 
@@ -70,25 +49,7 @@ const ProductDetails = () => {
     return (
         <>
             <div className='right-content w-100'>
-                <div className='card shadow border-0 w-100 flex-row p-4'>
-                    <h5 className="mb-0">Product View</h5>
-                    <Breadcrumbs aria-label="breadcrumb" className="ml-auto breadcrumbs_">
-                        <StyledBreadcrumb
-                            component="a"
-                            href="#"
-                            label="DashBoard"
-                            icon={<HomeIcon fontSize="small" />}
-                        />
-                        <StyledBreadcrumb
-                            component="a"
-                            href="#"
-                            label="Products"
-                        />
-                        <StyledBreadcrumb
-                            label="Products View"
-                        />
-                    </Breadcrumbs>
-                </div>
+                <BreadCrumbs title="Product Details" breadcrumbs={breadcrumbData} />
 
                 <div className="card productDetailsSection">
 
@@ -218,7 +179,7 @@ const ProductDetails = () => {
                                     </div>
                                     <div className="row">
                                         <div className="col-sm-3 d-flex align-items-center">
-                                            <span className="icon"><FaFileZipper  /></span>
+                                            <span className="icon"><FaFileZipper /></span>
                                             <span className="name">Size</span>
                                         </div>
                                         <div className="col-sm-9">
@@ -259,7 +220,7 @@ const ProductDetails = () => {
                                     </div>
                                     <div className="row">
                                         <div className="col-sm-3 d-flex align-items-center">
-                                            <span className="icon"><FaCartShopping  /></span>
+                                            <span className="icon"><FaCartShopping /></span>
                                             <span className="name">Stock</span>
                                         </div>
                                         <div className="col-sm-9">
@@ -277,7 +238,7 @@ const ProductDetails = () => {
                                     </div>
                                     <div className="row">
                                         <div className="col-sm-3 d-flex align-items-center">
-                                            <span className="icon"><GrValidate  /></span>
+                                            <span className="icon"><GrValidate /></span>
                                             <span className="name">Published</span>
                                         </div>
                                         <div className="col-sm-9">
@@ -378,7 +339,7 @@ const ProductDetails = () => {
 
                                     <div class="mc-review-analytics-detail-group"><h3 class="mc-review-analytics-total">total review (38)</h3><h4 class="mc-review-analytics-score">4.9</h4>
                                         <div class="mc-review-analytics-star">
-                                            <Rating name="read-only" value={4.6} readOnly precision={0.2} size='small' className='custom-rating'/>
+                                            <Rating name="read-only" value={4.6} readOnly precision={0.2} size='small' className='custom-rating' />
                                         </div>
                                         <p class="mc-review-analytics-text">your average rating star</p>
                                     </div>

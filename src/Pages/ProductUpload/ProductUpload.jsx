@@ -1,39 +1,22 @@
 import React, { useState } from 'react';
 import './ProductUpload.css'
-import { emphasize, styled } from '@mui/material/styles';
-import Breadcrumbs from '@mui/material/Breadcrumbs';
-import Chip from '@mui/material/Chip';
-import HomeIcon from '@mui/icons-material/Home';
-import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
-import FormHelperText from '@mui/material/FormHelperText';
-import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Rating from '@mui/material/Rating';
 import { Button } from '@mui/material';
 import { FaCloudUploadAlt } from 'react-icons/fa';
+import { MdCollections } from 'react-icons/md';
+import { HiDotsVertical } from 'react-icons/hi';
+import Menu from '@mui/material/Menu';
+import { IoIosTimer } from 'react-icons/io';
+import BreadCrumbs from '../../Components/BreadCrumbs/BreadCrumbs';
 
 
-
-const StyledBreadcrumb = styled(Chip)(({ theme }) => {
-    const backgroundColor =
-        theme.palette.mode === 'light'
-            ? theme.palette.grey[100]
-            : theme.palette.grey[800];
-    return {
-        backgroundColor,
-        height: theme.spacing(3),
-        color: theme.palette.text.primary,
-        fontWeight: theme.typography.fontWeightRegular,
-        '&:hover, &:focus': {
-            backgroundColor: emphasize(backgroundColor, 0.06),
-        },
-        '&:active': {
-            boxShadow: theme.shadows[1],
-            backgroundColor: emphasize(backgroundColor, 0.12),
-        },
-    };
-});
+const breadcrumbData = [
+    { label: 'DashBoard', href: '#', icon: true },
+    { label: 'Products', href: '#' },
+    { label: 'Product Upload' },
+];
 
 
 const ProductUpload = () => {
@@ -41,6 +24,15 @@ const ProductUpload = () => {
     const [categoryVal, setCategoryVal] = useState('');
     const [brandVal, setBrandVal] = useState('');
     const [ratingsValue, setRatingsValue] = useState(1);
+    const [anchorEl, setAnchorEl] = useState(null);
+    const open = Boolean(anchorEl);
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
+    const ITEM_HEIGHT = 48;
 
     const handleChangeCategory = (event) => {
         setCategoryVal(event.target.value);
@@ -51,29 +43,11 @@ const ProductUpload = () => {
 
     return (
         <div className='right-content w-100'>
-            <div className='card shadow border-0 w-100 flex-row p-4'>
-                <h5 className="mb-0">Product Upload</h5>
-                <Breadcrumbs aria-label="breadcrumb" className="ml-auto breadcrumbs_">
-                    <StyledBreadcrumb
-                        component="a"
-                        href="#"
-                        label="DashBoard"
-                        icon={<HomeIcon fontSize="small" />}
-                    />
-                    <StyledBreadcrumb
-                        component="a"
-                        href="#"
-                        label="Products"
-                    />
-                    <StyledBreadcrumb
-                        label="Product Upload"
-                    />
-                </Breadcrumbs>
-            </div>
+            <BreadCrumbs title="Product Upload" breadcrumbs={breadcrumbData} />
             <form action="" className='form'>
 
                 <div className="row">
-                    <div className="col-sm-7">
+                    <div className="col-sm-12">
                         <div className="card p-4">
                             <h5 className='mb-4'>Basic Information</h5>
                             <div className="form-group">
@@ -180,15 +154,67 @@ const ProductUpload = () => {
                                 <h6>Tags</h6>
                                 <textarea rows={5} cols={10} placeholder='type here...' />
                             </div>
-                            <br />
-                            <Button className='btn-blue btn-lg btn-big pr2'><FaCloudUploadAlt /> PUBLISH AND VIEW</Button>
                         </div>
 
                     </div>
-
-                    <div className="col-sm-5">
-
+                </div>
+                <div className="card p-4">
+                    <div class="mc-card-header">
+                        <h4 class="mc-card-title">Media and Published</h4>
+                        <div className="ml-auto pr-3">
+                            <Button className="ml-auto toggleIcon" onClick={handleClick}><HiDotsVertical /></Button>
+                            <Menu
+                                className='dropDown_menu'
+                                MenuListProps={{
+                                    'aria-labelledby': 'long-button',
+                                }}
+                                anchorEl={anchorEl}
+                                open={open}
+                                onClose={handleClose}
+                                PaperProps={{
+                                    style: {
+                                        maxHeight: ITEM_HEIGHT * 4.5,
+                                        width: '20ch',
+                                    },
+                                }}
+                            >
+                                <MenuItem onClick={handleClose}>
+                                    <IoIosTimer /> Last Day
+                                </MenuItem>
+                                <MenuItem onClick={handleClose}>
+                                    <IoIosTimer />  Last Week
+                                </MenuItem>
+                                <MenuItem onClick={handleClose}>
+                                    <IoIosTimer />   Last Month
+                                </MenuItem>
+                                <MenuItem onClick={handleClose}>
+                                    <IoIosTimer />  Last Year
+                                </MenuItem>
+                            </Menu>
+                        </div>
                     </div>
+
+                    <div class="mc-product-upload-media">
+                        <div class="mc-product-upload-image">
+                            <img src="https://mironcoder-hotash.netlify.app/images/product/single/01.webp" alt="product" />
+                        </div>
+                        <div class="mc-product-upload-image">
+                            <img src="https://mironcoder-hotash.netlify.app/images/product/single/02.webp" alt="product" />
+                        </div>
+                        <div class="mc-product-upload-image">
+                            <img src="https://mironcoder-hotash.netlify.app/images/product/single/03.webp" alt="product" />
+                        </div>
+                        <div class="mc-product-upload-image">
+                            <img src="https://mironcoder-hotash.netlify.app/images/product/single/04.webp" alt="product" />
+                        </div>
+                        <div class="mc-product-upload-file">
+                            <input type="file" id="product" />
+                            <label for="product"><span class="material-icons"><MdCollections /></span>
+                                <span>IMG_20210826_194819.jpg</span>
+                            </label>
+                        </div>
+                    </div>
+                    <Button className='btn-blue btn-lg btn-big pr-2 mt-4'><FaCloudUploadAlt /> PUBLISH AND VIEW</Button>
                 </div>
             </form>
         </div>

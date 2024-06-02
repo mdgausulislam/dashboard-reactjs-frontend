@@ -9,6 +9,7 @@ import Login from './Pages/Login/Login';
 import SignUp from './Pages/SignUp/SignUp';
 import ProductDetails from './Pages/ProductDetails/ProductDetails';
 import ProductUpload from './Pages/ProductUpload/ProductUpload';
+import ProductList from './Pages/ProductList/ProductList';
 
 
 const MyContext = createContext();
@@ -16,7 +17,7 @@ const MyContext = createContext();
 function App() {
 
   const [isToggleSidebar, setisToggleSidebar] = useState(false)
-  const [isLogin, setisLogin] = useState(true);
+  const [isLogin, setisLogin] = useState(false);
   const [isHiddenSidebarAndHeader, setisHiddenSidebarAndHeader] = useState(false);
   const [themeMode, setThemeMode] = useState(true);
 
@@ -68,6 +69,7 @@ function App() {
               <Route path="/dashboard" exact={true} element={<DashBoard />} />
               <Route path="/login" exact={true} element={<Login />} />
               <Route path="/signUp" exact={true} element={<SignUp />} />
+              <Route path="/products" exact={true} element={<ProductList />} />
               <Route path="/products/details" exact={true} element={<ProductDetails />} />
               <Route path="/products/uploads" exact={true} element={<ProductUpload />} />
             </Routes>
