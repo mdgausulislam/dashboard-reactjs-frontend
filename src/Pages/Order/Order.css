@@ -1,0 +1,12 @@
+.mc-float-card.red {
+    background: linear-gradient(#ff6179, #f11133);
+}
+
+.mc-float-card.red span {
+    color: #ff9baa;
+}
+
+.mc-table-body2 tr td{
+    max-width: 105px !important;
+    align-items: center;
+}

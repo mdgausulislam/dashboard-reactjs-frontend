@@ -1,0 +1,69 @@
+
+.mc-table-body tr td{
+    max-width: 120px !important;
+}
+.width-fixed tr td:nth-child(2),
+.width-fixed tr th:nth-child(2) {
+  max-width: 140px !important;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  font-size: 14px;
+}
+
+.user-role {
+  max-width: 110px !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  font-size: 14px;
+}
+
+.user-role svg {
+  font-size: 18px !important;
+  color: #1a9f53;
+  padding-right: 4px;
+}
+
+.userMail {
+  max-width: 120px !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  font-size: 14px;
+}
+
+.userPassword {
+  max-width: 120px !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  font-size: 14px;
+}
+
+.UserPhone {
+  max-width: 120px !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  font-size: 14px;
+}
+
+.mc-table-body1 .css-1e6y48t-MuiButtonBase-root-MuiButton-root{
+    padding: 0px 2px !important;
+    font-size: 12px !important;
+} 
+.success1.green {
+  background: #bdf5d3;
+  color: #187d44;
+}
+
+.userDate {
+  max-width: 110px !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  font-size: 14px !important;
+}
